@@ -1,0 +1,30 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class KeyboardInput : MonoBehaviour
+{
+    void Update()
+    {
+        // move left and right
+        if (Input.GetKey(KeyCode.D))
+        {
+            VirtualInputManager.Instance.MoveRight = true;
+        }
+
+        else
+        {
+            VirtualInputManager.Instance.MoveRight = false;
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            VirtualInputManager.Instance.MoveLeft = true;
+        }
+
+        else
+        {
+            VirtualInputManager.Instance.MoveLeft = false;
+        }
+    }
+}
