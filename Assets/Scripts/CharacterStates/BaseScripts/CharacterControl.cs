@@ -10,6 +10,10 @@ public class CharacterControl : MonoBehaviour
     public bool Jump;
     public GameObject ColliderEdgePrefab;
     public List<GameObject> BottomSpheres = new List<GameObject>();
+    public List<GameObject> FrontSpheres = new List<GameObject>();
+
+    public float GravityMultiplier;
+    public float PullMultiplier;
 
     private Rigidbody rigid;
     public Rigidbody RIGID_BODY
@@ -36,25 +40,51 @@ public class CharacterControl : MonoBehaviour
 
         GameObject bottomFront = CreateEdgeSphere(new Vector3(front, bottom, 0f));
         GameObject bottomBack = CreateEdgeSphere(new Vector3(back, bottom, 0f));
+        GameObject topFront = CreateEdgeSphere(new Vector3(front, top, 0f));
 
         bottomFront.transform.parent = this.transform;
         bottomBack.transform.parent = this.transform;
+        topFront.transform.parent = this.transform;
 
         BottomSpheres.Add(bottomFront);
         BottomSpheres.Add(bottomBack);
 
-        float sec = (bottomFront.transform.position - bottomBack.transform.position).magnitude / 5f;
-        for (int i = 0; i < 4; i++)
-        {
-            Vector3 pos = bottomBack.transform.position + (Vector3.right * sec * (i + 1));
+        FrontSpheres.Add(bottomFront);
+        FrontSpheres.Add(topFront);
 
-            GameObject newObj = CreateEdgeSphere(pos);
-            newObj.transform.parent = this.transform;
-            BottomSpheres.Add(newObj);
+        float horSec = (bottomFront.transform.position - bottomBack.transform.position).magnitude / 5f;
+        CreateMiddleSpheres(bottomFront, -this.transform.right, horSec, 4, BottomSpheres);
+
+        float verSec = (bottomFront.transform.position - topFront.transform.position).magnitude / 10f;
+        CreateMiddleSpheres(bottomFront, this.transform.up, verSec, 9, FrontSpheres);
+    }
+
+    private void FixedUpdate()
+    {
+        if (RIGID_BODY.velocity.y < 0f)
+        {
+            RIGID_BODY.velocity += (-Vector3.up * GravityMultiplier);
+        }
+
+        if (RIGID_BODY.velocity.y > 0f && !Jump)
+        {
+            RIGID_BODY.velocity += (-Vector3.up * PullMultiplier);
         }
     }
 
-    GameObject CreateEdgeSphere(Vector3 pos)
+    public void CreateMiddleSpheres(GameObject start, Vector3 dir, float sec, int interations, List<GameObject> spheresList)
+    {
+        for (int i = 0; i < interations; i++)
+        {
+            Vector3 pos = start.transform.position + (dir * sec * (i + 1));
+
+            GameObject newObj = CreateEdgeSphere(pos);
+            newObj.transform.parent = this.transform;
+            spheresList.Add(newObj);
+        }
+    }
+
+    public GameObject CreateEdgeSphere(Vector3 pos)
     {
         GameObject obj = Instantiate(ColliderEdgePrefab, pos, Quaternion.identity);
         return obj;
