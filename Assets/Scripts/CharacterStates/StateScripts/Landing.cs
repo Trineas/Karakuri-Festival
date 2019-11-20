@@ -9,6 +9,7 @@ public class Landing : StateData
     public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
     {
         animator.SetBool("Jump", false);
+        animator.SetBool("DoubleJump", false);
         // disable?
         animator.SetBool("Move", false);
     }

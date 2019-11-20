@@ -44,5 +44,16 @@ public class ManualInput : MonoBehaviour
         {
             characterControl.Jump = false;
         }
+
+        // double jump
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            characterControl.DoubleJump = true;
+        }
+
+        else
+        {
+            characterControl.DoubleJump = false;
+        }
     }
 }

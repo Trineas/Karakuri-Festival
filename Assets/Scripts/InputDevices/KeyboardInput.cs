@@ -37,5 +37,16 @@ public class KeyboardInput : MonoBehaviour
         {
             VirtualInputManager.Instance.Jump = false;
         }
+
+        // double jump
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            VirtualInputManager.Instance.DoubleJump = true;
+        }
+
+        else
+        {
+            VirtualInputManager.Instance.DoubleJump = false;
+        }
     }
 }

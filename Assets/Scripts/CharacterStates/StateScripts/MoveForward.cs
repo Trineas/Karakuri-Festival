@@ -6,7 +6,7 @@ using UnityEngine;
 public class MoveForward : StateData
 {
     public AnimationCurve SpeedGraph;
-    public float runSpeed;
+    public float Speed;
     public float BlockDistance;
 
     public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
@@ -41,7 +41,7 @@ public class MoveForward : StateData
 
             if (!CheckFront(control))
             {
-                control.transform.Translate(Vector3.right * runSpeed * SpeedGraph.Evaluate(stateInfo.normalizedTime) * Time.deltaTime);
+                control.transform.Translate(Vector3.right * Speed * SpeedGraph.Evaluate(stateInfo.normalizedTime) * Time.deltaTime);
             }
         }
 
@@ -51,7 +51,7 @@ public class MoveForward : StateData
 
             if (!CheckFront(control))
             {
-                control.transform.Translate(Vector3.right * runSpeed * SpeedGraph.Evaluate(stateInfo.normalizedTime) * Time.deltaTime);
+                control.transform.Translate(Vector3.right * Speed * SpeedGraph.Evaluate(stateInfo.normalizedTime) * Time.deltaTime);
             }
         }
     }

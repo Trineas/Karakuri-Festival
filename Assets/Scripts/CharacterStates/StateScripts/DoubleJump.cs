@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New State", menuName = "KarakuriFestival/AbilityData/Jump")]
-public class Jump : StateData
+[CreateAssetMenu(fileName = "New State", menuName = "KarakuriFestival/AbilityData/DoubleJump")]
+public class DoubleJump : StateData
 {
     public float jumpForce;
     public AnimationCurve Gravity;
@@ -21,11 +21,6 @@ public class Jump : StateData
 
         control.GravityMultiplier = Gravity.Evaluate(stateInfo.normalizedTime);
         control.PullMultiplier = Pull.Evaluate(stateInfo.normalizedTime);
-
-        if (control.DoubleJump)
-        {
-            animator.SetBool("DoubleJump", true);
-        }
     }
 
     public override void OnExit(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
