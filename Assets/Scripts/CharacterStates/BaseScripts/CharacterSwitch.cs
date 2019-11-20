@@ -7,8 +7,6 @@ public class CharacterSwitch : MonoBehaviour
     GameObject character1, character2;
     int characterSwitch;
 
-
-
     void Start()
     {
         characterSwitch = 1;
@@ -35,7 +33,6 @@ public class CharacterSwitch : MonoBehaviour
         if (characterSwitch == 1)
         {
             character1.SetActive(true);
-            
             character2.SetActive(false);
         }
 

@@ -7,4 +7,5 @@ public class VirtualInputManager : Singleton<VirtualInputManager>
     // character
     public bool MoveRight;
     public bool MoveLeft;
+    public bool Jump;
 }

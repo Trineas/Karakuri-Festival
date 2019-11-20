@@ -26,5 +26,16 @@ public class KeyboardInput : MonoBehaviour
         {
             VirtualInputManager.Instance.MoveLeft = false;
         }
+       
+        // jump
+        if (Input.GetKey(KeyCode.Space))
+        {
+            VirtualInputManager.Instance.Jump = true;
+        }
+
+        else
+        {
+            VirtualInputManager.Instance.Jump = false;
+        }
     }
 }

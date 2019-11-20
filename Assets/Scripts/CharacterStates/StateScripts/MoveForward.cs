@@ -7,7 +7,12 @@ public class MoveForward : StateData
 {
     public float runSpeed;
 
-    public override void UpdateAbility(CharacterState characterState, Animator animator)
+    public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
+    {
+        
+    }
+
+    public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
     {
         CharacterControl control = characterState.GetCharacterControl(animator);
 
@@ -34,5 +39,10 @@ public class MoveForward : StateData
             control.transform.Translate(Vector3.right * runSpeed * Time.deltaTime);
             control.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
         }
+    }
+
+    public override void OnExit(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
+    {
+        
     }
 }

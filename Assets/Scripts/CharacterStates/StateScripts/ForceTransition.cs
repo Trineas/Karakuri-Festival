@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New State", menuName = "KarakuriFestival/AbilityData/Idle")]
-public class Idle : StateData
+[CreateAssetMenu(fileName = "New State", menuName = "KarakuriFestival/AbilityData/ForceTransition")]
+public class ForceTransition : StateData
 {
+    [Range(0.01f, 1f)]
+    public float transitionTiming;
 
     public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
     {
@@ -13,28 +15,14 @@ public class Idle : StateData
 
     public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
     {
-        CharacterControl control = characterState.GetCharacterControl(animator);
-
-        if (control.MoveRight)
+        if (stateInfo.normalizedTime >= transitionTiming)
         {
-            animator.SetBool("Move", true);
+            animator.SetBool("ForceTransition", true);
         }
-
-        if (control.MoveLeft)
-        {
-            animator.SetBool("Move", true);
-        }
-
-        if (control.Jump)
-        {
-            animator.SetBool("Jump", true);
-        }
-
     }
 
     public override void OnExit(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
     {
-        
+        animator.SetBool("ForceTransition", false);
     }
 }
-

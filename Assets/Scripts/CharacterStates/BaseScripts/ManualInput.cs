@@ -13,6 +13,7 @@ public class ManualInput : MonoBehaviour
 
     void Update()
     {
+        // move left and right
         if (VirtualInputManager.Instance.MoveRight)
         {
             characterControl.MoveRight = true;
@@ -31,6 +32,17 @@ public class ManualInput : MonoBehaviour
         else
         {
             characterControl.MoveLeft = false;
+        }
+
+        // jump
+        if (Input.GetKey(KeyCode.Space))
+        {
+            characterControl.Jump = true;
+        }
+
+        else
+        {
+            characterControl.Jump = false;
         }
     }
 }
