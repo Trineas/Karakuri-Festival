@@ -38,8 +38,8 @@ ModelImporter:
       name: Goemon Jump Prep
       takeName: mixamo.com
       internalID: 0
-      firstFrame: 0
-      lastFrame: 22
+      firstFrame: 7
+      lastFrame: 30
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

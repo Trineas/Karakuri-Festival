@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 483e67f5ab89ff844a112a1e05f83645, type: 3}
   m_Name: Taku_DoubleJump
   m_EditorClassIdentifier: 
-  jumpForce: 100
+  jumpForce: 150
   Gravity:
     serializedVersion: 2
     m_Curve:
