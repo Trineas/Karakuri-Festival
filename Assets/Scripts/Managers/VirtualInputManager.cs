@@ -9,4 +9,5 @@ public class VirtualInputManager : Singleton<VirtualInputManager>
     public bool MoveLeft;
     public bool Jump;
     public bool DoubleJump;
+    public bool Attack;
 }

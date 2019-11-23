@@ -55,5 +55,16 @@ public class ManualInput : MonoBehaviour
         {
             characterControl.DoubleJump = false;
         }
+
+        // attack
+        if (Input.GetKey(KeyCode.Return))
+        {
+            characterControl.Attack = true;
+        }
+
+        else
+        {
+            characterControl.Attack = false;
+        }
     }
 }

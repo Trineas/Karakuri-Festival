@@ -11,17 +11,12 @@ public class MoveForward : StateData
 
     public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
     {
-        
+        animator.SetBool("Attack", false);
     }
 
     public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
     {
         CharacterControl control = characterState.GetCharacterControl(animator);
-
-        if (control.Jump)
-        {
-            animator.SetBool("Jump", true);
-        }
 
         if (control.MoveRight && control.MoveLeft)
         {
@@ -41,7 +36,7 @@ public class MoveForward : StateData
 
             if (!CheckFront(control))
             {
-                control.transform.Translate(Vector3.right * Speed * SpeedGraph.Evaluate(stateInfo.normalizedTime) * Time.deltaTime);
+                control.MoveForward(Speed, SpeedGraph.Evaluate(stateInfo.normalizedTime));
             }
         }
 
@@ -51,8 +46,18 @@ public class MoveForward : StateData
 
             if (!CheckFront(control))
             {
-                control.transform.Translate(Vector3.right * Speed * SpeedGraph.Evaluate(stateInfo.normalizedTime) * Time.deltaTime);
+                control.MoveForward(Speed, SpeedGraph.Evaluate(stateInfo.normalizedTime));
             }
+        }
+
+        if (control.Attack)
+        {
+            animator.SetBool("Attack", true);
+        }
+
+        if (control.Jump)
+        {
+            animator.SetBool("Jump", true);
         }
     }
 
@@ -61,6 +66,7 @@ public class MoveForward : StateData
         
     }
 
+    // front checker
     bool CheckFront(CharacterControl control)
     {
         foreach (GameObject o in control.FrontSpheres)
@@ -69,8 +75,38 @@ public class MoveForward : StateData
             RaycastHit hit;
             if (Physics.Raycast(o.transform.position, control.transform.right, out hit, BlockDistance))
             {
-                return true;
+                if (!control.RagdollParts.Contains(hit.collider))
+                {
+                    if (IsBodyPart(hit.collider))
+                    {
+                        return true;
+                    }
+    
+                }
             }
+
+        }
+
+        return false;
+    }
+
+    bool IsBodyPart(Collider col)
+    {
+        CharacterControl control = col.transform.root.GetComponent<CharacterControl>();
+
+        if (control == null)
+        {
+            return false;
+        }
+
+        if (control.gameObject == col.gameObject)
+        {
+            return false;
+        }
+
+        if (control.RagdollParts.Contains(col))
+        {
+            return true;
         }
 
         return false;

@@ -13,6 +13,7 @@ public class Jump : StateData
     {
         characterState.GetCharacterControl(animator).RIGID_BODY.AddForce(Vector3.up * jumpForce);
         animator.SetBool("Grounded", false);
+        animator.SetBool("Attack", false);
     }
 
     public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
@@ -25,6 +26,11 @@ public class Jump : StateData
         if (control.DoubleJump)
         {
             animator.SetBool("DoubleJump", true);
+        }
+
+        if (control.Attack)
+        {
+            animator.SetBool("Attack", true);
         }
     }
 

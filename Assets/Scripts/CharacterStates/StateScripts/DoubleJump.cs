@@ -11,6 +11,7 @@ public class DoubleJump : StateData
 
     public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
     {
+        //characterState.GetCharacterControl(animator).RIGID_BODY.velocity = Vector3.zero; -- Stopping Velocity before adding force again
         characterState.GetCharacterControl(animator).RIGID_BODY.AddForce(Vector3.up * jumpForce);
         animator.SetBool("Grounded", false);
     }

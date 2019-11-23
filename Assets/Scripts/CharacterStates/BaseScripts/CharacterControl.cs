@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class CharacterControl : MonoBehaviour
 {
-    public Animator animator;
+    public Animator SkinnedMeshAnimator;
     public bool MoveRight;
     public bool MoveLeft;
     public bool Jump;
     public bool DoubleJump;
+    public bool Attack;
     public GameObject ColliderEdgePrefab;
     public List<GameObject> BottomSpheres = new List<GameObject>();
     public List<GameObject> FrontSpheres = new List<GameObject>();
+    public List<Collider> RagdollParts = new List<Collider>();
+    public List<Collider> CollidingParts = new List<Collider>();
 
     public float GravityMultiplier;
     public float PullMultiplier;
@@ -28,9 +31,93 @@ public class CharacterControl : MonoBehaviour
             return rigid;
         }
     }
-
-    // ground detection
+    
     private void Awake()
+    {
+        bool SwitchBack = false;
+
+        if (!IsFacingForward())
+        {
+            SwitchBack = true;
+        }
+
+        FaceForward(true);
+        SetRagdollParts();
+        SetColliderSpheres();
+
+        if (SwitchBack)
+        {
+            FaceForward(false);
+        }
+    }
+
+    // attack detection
+    private void OnTriggerEnter(Collider col)
+    {
+        if (RagdollParts.Contains(col))
+        {
+            return;
+        }
+
+        CharacterControl control = col.transform.root.GetComponent<CharacterControl>();
+
+        if (control == null)
+        {
+            return;
+        }
+
+        if (col.gameObject == control.gameObject)
+        {
+            return;
+        }
+
+        if (!CollidingParts.Contains(col))
+        {
+            CollidingParts.Add(col);
+        }
+    }
+
+    private void OnTriggerExit(Collider col)
+    {
+        if (CollidingParts.Contains(col))
+        {
+            CollidingParts.Remove(col);
+        }
+
+    }
+
+    private void SetRagdollParts()
+    {
+        Collider[] colliders = this.gameObject.GetComponentsInChildren<Collider>();
+
+        foreach(Collider c in colliders)
+        {
+            if (c.gameObject != this.gameObject)
+            {     
+                c.isTrigger = true;
+                RagdollParts.Add(c);
+            }
+        }
+    }
+
+    // when used turns ragdolls on and everything else off
+    public void TurnOnRagdoll()
+    {
+        RIGID_BODY.useGravity = false;
+        RIGID_BODY.velocity = Vector3.zero;
+        this.gameObject.GetComponent<BoxCollider>().enabled = false;
+        SkinnedMeshAnimator.enabled = false;
+        SkinnedMeshAnimator.avatar = null;
+
+        foreach(Collider c in RagdollParts)
+        {
+            c.isTrigger = false;
+            c.attachedRigidbody.velocity = Vector3.zero;
+        }
+    }
+
+    // ground detection and collision
+    private void SetColliderSpheres()
     {
         BoxCollider box = GetComponent<BoxCollider>();
 
@@ -89,6 +176,38 @@ public class CharacterControl : MonoBehaviour
     {
         GameObject obj = Instantiate(ColliderEdgePrefab, pos, Quaternion.identity);
         return obj;
+    }
+
+    // move forward
+    public void MoveForward(float Speed, float SpeedGraph)
+    {
+        transform.Translate(Vector3.right * Speed * SpeedGraph * Time.deltaTime);
+    }
+
+    public void FaceForward(bool forward)
+    {
+        if (forward)
+        {
+            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        }
+
+        else
+        {
+            transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+        }
+    }
+
+    public bool IsFacingForward()
+    {
+        if (transform.forward.z > 0f)
+        {
+            return true;
+        }
+
+        else
+        {
+            return false;
+        }
     }
 }
  

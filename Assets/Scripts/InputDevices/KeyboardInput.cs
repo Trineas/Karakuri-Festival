@@ -48,5 +48,16 @@ public class KeyboardInput : MonoBehaviour
         {
             VirtualInputManager.Instance.DoubleJump = false;
         }
+
+        // attack
+        if (Input.GetKey(KeyCode.Return))
+        {
+            VirtualInputManager.Instance.Attack = true;
+        }
+
+        else
+        {
+            VirtualInputManager.Instance.Attack = false;
+        }
     }
 }
