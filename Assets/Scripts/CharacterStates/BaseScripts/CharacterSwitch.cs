@@ -48,4 +48,27 @@ public class CharacterSwitch : MonoBehaviour
             character2.SetActive(true);
         }
     }
+    // particles for later?
+    /* if (info.AttackAbility.UseDeathParticles)
+                    {
+                        if (info.AttackAbility.ParticleType.ToString().Contains("VFX"))
+                        {
+                            GameObject vfx =
+                                PoolManager.Instance.GetObject(info.AttackAbility.ParticleType);
+
+    vfx.transform.position =
+                                control.animationProgress.AttackingPart.transform.position;
+
+                            vfx.SetActive(true);
+
+                            if (info.Attacker.IsFacingForward())
+                            {
+                                vfx.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                            }
+                            else
+                            {
+                                vfx.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+                            }
+    */
 }
+
