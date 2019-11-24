@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7492223658605139866}
   - component: {fileID: 7492223658605139867}
   - component: {fileID: 7492223658605139870}
-  - component: {fileID: 7492223658605139871}
+  - component: {fileID: 7820304318969907720}
   - component: {fileID: -6004623044929615040}
   - component: {fileID: 8263500228098376190}
   - component: {fileID: -4837811151276023509}
@@ -115,7 +115,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &7492223658605139871
+--- !u!114 &7820304318969907720
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,7 +138,6 @@ MonoBehaviour:
   BottomSpheres: []
   FrontSpheres: []
   RagdollParts: []
-  CollidingParts: []
   GravityMultiplier: 0
   PullMultiplier: 0
 --- !u!114 &-6004623044929615040

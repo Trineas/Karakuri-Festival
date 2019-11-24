@@ -21,6 +21,7 @@ public class CharacterSwitch : MonoBehaviour
 
     void Update()
     {
+
         if (Input.GetButtonDown("CharacterSwitch"))
         {
             if (characterSwitch == 1)

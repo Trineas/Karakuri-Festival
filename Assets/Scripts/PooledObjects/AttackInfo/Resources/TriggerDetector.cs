@@ -2,8 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum DeathAnimation
+{
+    Character1,
+    Character2,
+    Character3,
+    Enemy1,
+    Enemy2,
+    Enemy3,
+}
+
 public class TriggerDetector : MonoBehaviour
 {
+    public DeathAnimation deathAnimation;
+
+    public List<Collider> CollidingParts = new List<Collider>();
     private CharacterControl owner;
 
     private void Awake()
@@ -31,17 +44,17 @@ public class TriggerDetector : MonoBehaviour
             return;
         }
 
-        if (!owner.CollidingParts.Contains(col))
+        if (!CollidingParts.Contains(col))
         {
-            owner.CollidingParts.Add(col);
+            CollidingParts.Add(col);
         }
     }
 
     private void OnTriggerExit(Collider attacker)
     {
-        if (owner.CollidingParts.Contains(attacker))
+        if (CollidingParts.Contains(attacker))
         {
-            owner.CollidingParts.Remove(attacker);
+            CollidingParts.Remove(attacker);
         }
 
     }

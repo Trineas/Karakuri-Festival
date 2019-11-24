@@ -5,6 +5,7 @@ using UnityEngine;
 public class DamageDetector : MonoBehaviour
 {
     CharacterControl control;
+    DeathAnimation PickDeathAnimation;
 
     private void Awake()
     {
@@ -60,23 +61,30 @@ public class DamageDetector : MonoBehaviour
 
     private bool IsCollided(AttackInfo info)
     {
-        foreach(Collider collider in control.CollidingParts)
+        foreach(TriggerDetector trigger in control.GetAllTriggers())
         {
-            foreach(string name in info.ColliderNames)
+            foreach (Collider collider in trigger.CollidingParts)
             {
-                if (name == collider.gameObject.name)
+                foreach (string name in info.ColliderNames)
                 {
-                    return true;
+                    if (name == collider.gameObject.name)
+                    {
+                        PickDeathAnimation = trigger.deathAnimation;
+                        return true;
+                    }
                 }
             }
         }
+
         return false;
     }
 
     private void TakeDamage(AttackInfo info)
     {
         Debug.Log(info.Attacker.gameObject.name + " hits: " + this.gameObject.name);
-        control.SkinnedMeshAnimator.runtimeAnimatorController = info.AttackAbility.GetDeathAnimator();
+        Debug.Log(this.gameObject.name + " plays: " + PickDeathAnimation.ToString());
+        //control.SkinnedMeshAnimator.runtimeAnimatorController = info.AttackAbility.GetDeathAnimator();
+        control.SkinnedMeshAnimator.runtimeAnimatorController = DeathAnimationManager.Instance.GetAnimator(PickDeathAnimation);
         info.CurrentHits++;
 
         control.GetComponent<BoxCollider>().enabled = false;

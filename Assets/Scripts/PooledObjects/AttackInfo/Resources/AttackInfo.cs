@@ -35,4 +35,9 @@ public class AttackInfo : MonoBehaviour
         MaxHits = attack.MaxHits;
         CurrentHits = 0;
     }
+
+    private void OnDisable()
+    {
+        isFinished = true;
+    }
 }
