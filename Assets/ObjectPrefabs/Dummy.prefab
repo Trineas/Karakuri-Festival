@@ -217,7 +217,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 425fc9493c139854cb0de3dbfeaa970a, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -349,6 +349,56 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7586289973807056823}
     m_Modifications:
+    - target: {fileID: 8802310843337026644, guid: 63cf06ba407625e4989f99ec57630812,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6284886905183963588, guid: 63cf06ba407625e4989f99ec57630812,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203644995028696667, guid: 63cf06ba407625e4989f99ec57630812,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3601966337983155029, guid: 63cf06ba407625e4989f99ec57630812,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4159182834840942982, guid: 63cf06ba407625e4989f99ec57630812,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2537760286693759363, guid: 63cf06ba407625e4989f99ec57630812,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357076872308539184, guid: 63cf06ba407625e4989f99ec57630812,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1680824760997042070, guid: 63cf06ba407625e4989f99ec57630812,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864045655334787970, guid: 63cf06ba407625e4989f99ec57630812,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989337494319357200, guid: 63cf06ba407625e4989f99ec57630812,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3611765134463388107, guid: 63cf06ba407625e4989f99ec57630812,
         type: 3}
       propertyPath: m_Name
@@ -439,57 +489,7 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 2537760286693759363, guid: 63cf06ba407625e4989f99ec57630812,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1864045655334787970, guid: 63cf06ba407625e4989f99ec57630812,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8802310843337026644, guid: 63cf06ba407625e4989f99ec57630812,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3601966337983155029, guid: 63cf06ba407625e4989f99ec57630812,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3357076872308539184, guid: 63cf06ba407625e4989f99ec57630812,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6284886905183963588, guid: 63cf06ba407625e4989f99ec57630812,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4159182834840942982, guid: 63cf06ba407625e4989f99ec57630812,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6203644995028696667, guid: 63cf06ba407625e4989f99ec57630812,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 560560600980599351, guid: 63cf06ba407625e4989f99ec57630812,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1989337494319357200, guid: 63cf06ba407625e4989f99ec57630812,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1680824760997042070, guid: 63cf06ba407625e4989f99ec57630812,
         type: 3}
       propertyPath: m_IsTrigger
       value: 1

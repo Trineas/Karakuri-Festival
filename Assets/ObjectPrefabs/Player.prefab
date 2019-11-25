@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 425fc9493c139854cb0de3dbfeaa970a, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a1fc46e43b46c14aba7bd6530042c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enabled: 1
+  character3Enabled: 0
 --- !u!114 &8263500228098376190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,11 +184,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7492223658605139864}
     m_Modifications:
-    - target: {fileID: 4767798107280523993, guid: c21b51e668f7eda409a7174b84e3ff87,
-        type: 3}
-      propertyPath: m_Name
-      value: Goemon
-      objectReference: {fileID: 0}
     - target: {fileID: 8390706137941061834, guid: c21b51e668f7eda409a7174b84e3ff87,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -244,6 +239,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4767798107280523993, guid: c21b51e668f7eda409a7174b84e3ff87,
+        type: 3}
+      propertyPath: m_Name
+      value: Goemon
+      objectReference: {fileID: 0}
     - target: {fileID: 1831065460157711803, guid: c21b51e668f7eda409a7174b84e3ff87,
         type: 3}
       propertyPath: m_Name
@@ -269,11 +269,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7492223658605139864}
     m_Modifications:
-    - target: {fileID: 250586864582335180, guid: c2c5640ebddb2514997571a0b7371889,
-        type: 3}
-      propertyPath: m_Name
-      value: Ebisumaru
-      objectReference: {fileID: 0}
     - target: {fileID: 3828370519029835999, guid: c2c5640ebddb2514997571a0b7371889,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -343,6 +338,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 250586864582335180, guid: c2c5640ebddb2514997571a0b7371889,
+        type: 3}
+      propertyPath: m_Name
+      value: Ebisumaru
       objectReference: {fileID: 0}
     - target: {fileID: 9066886696735548070, guid: c2c5640ebddb2514997571a0b7371889,
         type: 3}
