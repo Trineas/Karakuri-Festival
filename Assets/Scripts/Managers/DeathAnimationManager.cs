@@ -18,7 +18,7 @@ public class DeathAnimationManager : Singleton<DeathAnimationManager>
         }
     }
 
-    public RuntimeAnimatorController GetAnimator(DeathAnimation deathAnimation)
+    public RuntimeAnimatorController GetAnimator(DeathAnimation deathAnimation, AttackInfo info)
     {
         SetupDeathAnimationLoader();
 

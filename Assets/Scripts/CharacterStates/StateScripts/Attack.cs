@@ -12,7 +12,6 @@ public class Attack : StateData
     public bool MustFaceAttacker;
     public float LethalRange;
     public int MaxHits;
-    //public List<RuntimeAnimatorController> DeathAnimators = new List<RuntimeAnimatorController>();
 
     private List<AttackInfo> FinishedAttacks = new List<AttackInfo>();
 
@@ -20,9 +19,8 @@ public class Attack : StateData
     {
         animator.SetBool("Attack", false);
 
-        //GameObject obj = Instantiate(Resources.Load("AttackInfo", typeof(GameObject))) as GameObject;
         GameObject obj = PoolManager.Instance.GetObject(PoolObjectType.ATTACKINFO);
-        AttackInfo info = obj.GetComponent<AttackInfo>(); //obj.GetComponent<AttackInfo>();
+        AttackInfo info = obj.GetComponent<AttackInfo>();
 
         obj.SetActive(true);
         info.ResetInfo(this, characterState.GetCharacterControl(animator));
@@ -50,7 +48,7 @@ public class Attack : StateData
     {
         if (StartAttackTime <= stateInfo.normalizedTime && EndAttackTime > stateInfo.normalizedTime)
         {
-            foreach(AttackInfo info in AttackManager.Instance.CurrentAttacks)
+            foreach (AttackInfo info in AttackManager.Instance.CurrentAttacks)
             {
                 if (info == null)
                 {
@@ -69,7 +67,7 @@ public class Attack : StateData
     {
         if (stateInfo.normalizedTime >= EndAttackTime)
         {
-            foreach(AttackInfo info in AttackManager.Instance.CurrentAttacks)
+            foreach (AttackInfo info in AttackManager.Instance.CurrentAttacks)
             {
                 if (info == null)
                 {
@@ -80,7 +78,6 @@ public class Attack : StateData
                 {
                     info.isFinished = true;
                     info.GetComponent<PoolObject>().TurnOff();
-                    //Destroy(info.gameObject);
                 }
             }
         }
@@ -88,6 +85,7 @@ public class Attack : StateData
 
     public override void OnExit(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
     {
+        animator.SetBool("Attack", false);
         ClearAttack();
     }
 
@@ -95,15 +93,15 @@ public class Attack : StateData
     {
         FinishedAttacks.Clear();
 
-        foreach(AttackInfo info in AttackManager.Instance.CurrentAttacks)
+        foreach (AttackInfo info in AttackManager.Instance.CurrentAttacks)
         {
-            if (info == null || info.isFinished)
+            if (info == null || info.AttackAbility == this)
             {
                 FinishedAttacks.Add(info);
             }
         }
 
-        foreach(AttackInfo info in FinishedAttacks)
+        foreach (AttackInfo info in FinishedAttacks)
         {
             if (AttackManager.Instance.CurrentAttacks.Contains(info))
             {
@@ -111,11 +109,4 @@ public class Attack : StateData
             }
         }
     }
-
-    //public RuntimeAnimatorController GetDeathAnimator()
-    //{
-    //    int index = Random.Range(0, DeathAnimators.Count);
-    //    return DeathAnimators[index];
-    //}
 }
-

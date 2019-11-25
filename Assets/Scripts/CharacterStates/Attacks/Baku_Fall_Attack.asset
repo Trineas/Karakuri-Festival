@@ -10,15 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7cce6d0a038618f4d87455a14448f7d8, type: 3}
-  m_Name: Baku_Attack
+  m_Name: Baku_Fall_Attack
   m_EditorClassIdentifier: 
   StartAttackTime: 0.15
-  EndAttackTime: 0.5
-  ColliderNames:
-  - mixamorig:LeftHand
-  MustCollide: 1
+  EndAttackTime: 0.99
+  ColliderNames: []
+  MustCollide: 0
   MustFaceAttacker: 0
-  LethalRange: 0
-  MaxHits: 1
-  DeathAnimators:
-  - {fileID: 9100000, guid: 7f1e3b6dbf6e9c942950321e673270cc, type: 2}
+  LethalRange: 4
+  MaxHits: 10

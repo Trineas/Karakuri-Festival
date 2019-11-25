@@ -83,7 +83,7 @@ public class CharacterSwitch : MonoBehaviour
             character1.SetActive(true);
             character2.SetActive(false);
             //character3.SetActive(false);
-            GameObject.Find("Player").GetComponent<CharacterControl>().SkinnedMeshAnimator = Resources.Load<Animator>("Goemon");
+            //GameObject.Find("Player").GetComponent<CharacterControl>().SkinnedMeshAnimator = Resources.Load<Animator>("Goemon");
         }
 
         if (characterSwitch == 2)
@@ -91,7 +91,7 @@ public class CharacterSwitch : MonoBehaviour
             character1.SetActive(false);
             character2.SetActive(true);
             //character3.SetActive(false);
-            GameObject.Find("Player").GetComponent<CharacterControl>().SkinnedMeshAnimator = Resources.Load<Animator>("Ebisumaru");
+            //GameObject.Find("Player").GetComponent<CharacterControl>().SkinnedMeshAnimator = Resources.Load<Animator>("Ebisumaru");
         }
 
         if (characterSwitch == 3)

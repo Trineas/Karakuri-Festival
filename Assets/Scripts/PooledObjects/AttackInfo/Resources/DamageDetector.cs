@@ -56,6 +56,16 @@ public class DamageDetector : MonoBehaviour
                     TakeDamage(info);
                 }
             }
+
+            else
+            {
+                float dist = Vector3.SqrMagnitude(this.gameObject.transform.position - info.Attacker.transform.position);
+                Debug.Log(this.gameObject.name + "dist: " + dist.ToString());
+                if (dist <= info.LethalRange)
+                {
+                    TakeDamage(info);
+                }
+            }
         }
     }
 
@@ -83,8 +93,9 @@ public class DamageDetector : MonoBehaviour
     {
         Debug.Log(info.Attacker.gameObject.name + " hits: " + this.gameObject.name);
         Debug.Log(this.gameObject.name + " plays: " + PickDeathAnimation.ToString());
+
         //control.SkinnedMeshAnimator.runtimeAnimatorController = info.AttackAbility.GetDeathAnimator();
-        control.SkinnedMeshAnimator.runtimeAnimatorController = DeathAnimationManager.Instance.GetAnimator(PickDeathAnimation);
+        control.SkinnedMeshAnimator.runtimeAnimatorController = DeathAnimationManager.Instance.GetAnimator(PickDeathAnimation, info);
         info.CurrentHits++;
 
         control.GetComponent<BoxCollider>().enabled = false;

@@ -6,6 +6,8 @@ using UnityEngine;
 public class Jump : StateData
 {
     public float jumpForce;
+    public float StartJumpTime;
+    public float EndJumpTime;
     public AnimationCurve Gravity;
     public AnimationCurve Pull;
 
@@ -14,6 +16,7 @@ public class Jump : StateData
         characterState.GetCharacterControl(animator).RIGID_BODY.AddForce(Vector3.up * jumpForce);
         animator.SetBool("Grounded", false);
         animator.SetBool("Attack", false);
+        animator.SetBool("DoubleJump", false);
     }
 
     public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
@@ -22,15 +25,26 @@ public class Jump : StateData
 
         control.GravityMultiplier = Gravity.Evaluate(stateInfo.normalizedTime);
         control.PullMultiplier = Pull.Evaluate(stateInfo.normalizedTime);
-
-        if (control.DoubleJump)
-        {
-            animator.SetBool("DoubleJump", true);
-        }
+        CheckDoubleJump(characterState, animator, stateInfo);
 
         if (control.Attack)
         {
             animator.SetBool("Attack", true);
+        }
+    }
+
+    public void CheckDoubleJump(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
+    {
+        if (stateInfo.normalizedTime >= StartJumpTime + ((EndJumpTime - StartJumpTime) / 3f))
+        {
+            if (stateInfo.normalizedTime < EndJumpTime + ((EndJumpTime - StartJumpTime) / 2f))
+            {
+                CharacterControl control = characterState.GetCharacterControl(animator);
+                if (control.Jump)
+                {
+                    animator.SetBool("DoubleJump", true);
+                }
+            }
         }
     }
 

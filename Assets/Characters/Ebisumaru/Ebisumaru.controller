@@ -1,30 +1,34 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1101 &-8699698233374121116
-AnimatorStateTransition:
+--- !u!1102 &-8437485794960500997
+AnimatorState:
+  serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: Attack
-    m_EventTreshold: 0
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 7984030923190330511}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 3
-  m_TransitionDuration: 0.050632834
-  m_TransitionOffset: 0
-  m_ExitTime: 0.9344076
-  m_HasExitTime: 0
-  m_HasFixedDuration: 1
-  m_InterruptionSource: 0
-  m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
+  m_Name: Ebisumaru Fall Attack
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions:
+  - {fileID: 1135528295870163544}
+  m_StateMachineBehaviours:
+  - {fileID: 5004939151796744963}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -203655887218126122, guid: 18fcd5fc248e576429e5c33cf0fbf4d7,
+    type: 3}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1101 &-7972883453059878820
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -92,7 +96,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.033263624
+  m_TransitionDuration: 0.015823424
   m_TransitionOffset: 0
   m_ExitTime: 0.765625
   m_HasExitTime: 0
@@ -126,7 +130,10 @@ AnimatorStateMachine:
     m_Position: {x: 210, y: 300, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7984030923190330511}
-    m_Position: {x: 900, y: -70, z: 0}
+    m_Position: {x: 910, y: -20, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -8437485794960500997}
+    m_Position: {x: 710, y: 440, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -376,6 +383,32 @@ MonoBehaviour:
   ListAbilityData:
   - {fileID: 11400000, guid: 9866c60480650b54e9ec0c13eb7201aa, type: 2}
   - {fileID: 11400000, guid: d476d7705b18728459a17ec1fa3789ed, type: 2}
+  - {fileID: 11400000, guid: 2e12a40ab1a129a41b91b44ab0c19444, type: 2}
+--- !u!1101 &1135528295870163544
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: Grounded
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 2784422826384551385}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.22220182
+  m_TransitionOffset: 0
+  m_ExitTime: 0.9708862
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1101 &1135909285581366728
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -401,6 +434,31 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1101 &2532564217643289419
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: Attack
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -8437485794960500997}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.25
+  m_TransitionOffset: 0
+  m_ExitTime: 0.765625
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1102 &2784422826384551385
 AnimatorState:
   serializedVersion: 5
@@ -409,7 +467,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Ebisumaru Landing
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -3711437197233226893}
@@ -496,6 +554,22 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 06ccc8f76278ed84ebc2dd4161cdd0f1, type: 2}
   - {fileID: 11400000, guid: 23d9723e5d2505140b308e4eb0967ed6, type: 2}
   - {fileID: 11400000, guid: b69c4b29aae9e35488fe2f8499edce7f, type: 2}
+--- !u!114 &5004939151796744963
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c3d57005c32b084691486ba2dbf47c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListAbilityData:
+  - {fileID: 11400000, guid: 5a7a20e3e8365864d97a79f5043940e7, type: 2}
+  - {fileID: 11400000, guid: 9866c60480650b54e9ec0c13eb7201aa, type: 2}
+  - {fileID: 11400000, guid: 74b1c96c303b8bf4ab315ae68b044762, type: 2}
 --- !u!114 &5032075054776728256
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -512,6 +586,31 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0753bd947db556646a4c890de8cece24, type: 2}
   - {fileID: 11400000, guid: 67ec52c92c05b5548a834ed0389c2ec5, type: 2}
   - {fileID: 11400000, guid: d476d7705b18728459a17ec1fa3789ed, type: 2}
+--- !u!1101 &5332031223222489022
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: Attack
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -8437485794960500997}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.25
+  m_TransitionOffset: 0
+  m_ExitTime: 0.31818193
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1102 &5997319331041834833
 AnimatorState:
   serializedVersion: 5
@@ -556,6 +655,7 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -6271231794272383515}
+  - {fileID: 2532564217643289419}
   m_StateMachineBehaviours:
   - {fileID: 129004087500538448}
   m_Position: {x: 50, y: 50, z: 0}
@@ -585,7 +685,7 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -7972883453059878820}
-  - {fileID: -8699698233374121116}
+  - {fileID: 5332031223222489022}
   m_StateMachineBehaviours:
   - {fileID: -5650405773742202860}
   m_Position: {x: 50, y: 50, z: 0}

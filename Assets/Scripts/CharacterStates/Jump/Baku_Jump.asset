@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Baku_Jump
   m_EditorClassIdentifier: 
   jumpForce: 350
+  StartJumpTime: 0
+  EndJumpTime: 0
   Gravity:
     serializedVersion: 2
     m_Curve:
