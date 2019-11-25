@@ -15,7 +15,6 @@ public class CharacterControl : MonoBehaviour
     public List<GameObject> FrontSpheres = new List<GameObject>();
     public List<Collider> RagdollParts = new List<Collider>();
     //public List<Collider> CollidingParts = new List<Collider>();
-
     public float GravityMultiplier;
     public float PullMultiplier;
 
