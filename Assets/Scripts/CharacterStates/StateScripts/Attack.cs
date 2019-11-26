@@ -17,7 +17,7 @@ public class Attack : StateData
 
     public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
     {
-        animator.SetBool("Attack", false);
+        animator.SetBool(TransitionParameter.Attack.ToString(), false);
 
         GameObject obj = PoolManager.Instance.GetObject(PoolObjectType.ATTACKINFO);
         AttackInfo info = obj.GetComponent<AttackInfo>();
@@ -40,7 +40,7 @@ public class Attack : StateData
 
         if (control.Attack)
         {
-            animator.SetBool("Attack", true);
+            animator.SetBool(TransitionParameter.Attack.ToString(), true);
         }
     }
 
@@ -85,7 +85,7 @@ public class Attack : StateData
 
     public override void OnExit(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
     {
-        animator.SetBool("Attack", false);
+        animator.SetBool(TransitionParameter.Attack.ToString(), false);
         ClearAttack();
     }
 

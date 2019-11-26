@@ -9,8 +9,8 @@ public class Idle : StateData
     public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
     {
         // disable?
-        //animator.SetBool("Jump", false);
-        animator.SetBool("Attack", false);
+        //animator.SetBool(TransitionParameter.Jump.ToString(), false);
+        animator.SetBool(TransitionParameter.Attack.ToString(), false);
     }
 
     public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
@@ -19,22 +19,22 @@ public class Idle : StateData
 
         if (control.Attack)
         {
-            animator.SetBool("Attack", true);
+            animator.SetBool(TransitionParameter.Attack.ToString(), true);
         }
 
         if (control.MoveRight)
         {
-            animator.SetBool("Move", true);
+            animator.SetBool(TransitionParameter.Move.ToString(), true);
         }
 
         if (control.MoveLeft)
         {
-            animator.SetBool("Move", true);
+            animator.SetBool(TransitionParameter.Move.ToString(), true);
         }
 
         if (control.Jump)
         {
-            animator.SetBool("Jump", true);
+            animator.SetBool(TransitionParameter.Jump.ToString(), true);
         }
 
     }

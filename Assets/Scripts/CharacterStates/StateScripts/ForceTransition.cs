@@ -17,12 +17,12 @@ public class ForceTransition : StateData
     {
         if (stateInfo.normalizedTime >= transitionTiming)
         {
-            animator.SetBool("ForceTransition", true);
+            animator.SetBool(TransitionParameter.ForceTransition.ToString(), true);
         }
     }
 
     public override void OnExit(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
     {
-        animator.SetBool("ForceTransition", false);
+        animator.SetBool(TransitionParameter.ForceTransition.ToString(), false);
     }
 }

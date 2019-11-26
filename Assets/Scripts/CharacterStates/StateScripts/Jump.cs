@@ -14,9 +14,9 @@ public class Jump : StateData
     public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
     {
         characterState.GetCharacterControl(animator).RIGID_BODY.AddForce(Vector3.up * jumpForce);
-        animator.SetBool("Grounded", false);
-        animator.SetBool("Attack", false);
-        animator.SetBool("DoubleJump", false);
+        animator.SetBool(TransitionParameter.Grounded.ToString(), false);
+        animator.SetBool(TransitionParameter.Attack.ToString(), false);
+        animator.SetBool(TransitionParameter.DoubleJump.ToString(), false);
     }
 
     public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
@@ -29,7 +29,7 @@ public class Jump : StateData
 
         if (control.Attack)
         {
-            animator.SetBool("Attack", true);
+            animator.SetBool(TransitionParameter.Attack.ToString(), true);
         }
     }
 
@@ -42,7 +42,7 @@ public class Jump : StateData
                 CharacterControl control = characterState.GetCharacterControl(animator);
                 if (control.Jump)
                 {
-                    animator.SetBool("DoubleJump", true);
+                    animator.SetBool(TransitionParameter.DoubleJump.ToString(), true);
                 }
             }
         }

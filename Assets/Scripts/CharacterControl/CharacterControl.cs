@@ -2,19 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum TransitionParameter
+{
+    Move,
+    Jump,
+    DoubleJump,
+    ForceTransition,
+    Grounded,
+    Attack,
+    TransitionIndex,
+}
+
 public class CharacterControl : MonoBehaviour
 {
     public Animator SkinnedMeshAnimator;
     public bool MoveRight;
     public bool MoveLeft;
+    public bool MoveUp;
+    public bool MoveDown;
     public bool Jump;
     public bool DoubleJump;
     public bool Attack;
+    public bool RangedAttack;
+    public bool CharacterSwitchRight;
+    public bool CharacterSwitchLeft;
     public GameObject ColliderEdgePrefab;
     public List<GameObject> BottomSpheres = new List<GameObject>();
     public List<GameObject> FrontSpheres = new List<GameObject>();
     public List<Collider> RagdollParts = new List<Collider>();
-    //public List<Collider> CollidingParts = new List<Collider>();
     public float GravityMultiplier;
     public float PullMultiplier;
 
@@ -44,7 +59,6 @@ public class CharacterControl : MonoBehaviour
 
         FaceForward(true);
 
-        //SetRagdollParts();
         SetColliderSpheres();
 
         if (SwitchBack)

@@ -22,12 +22,12 @@ public class GroundDetector : StateData
         {
             if (IsGrounded(control))
             {
-                animator.SetBool("Grounded", true);
+                animator.SetBool(TransitionParameter.Grounded.ToString(), true);
             }
 
             else
             {
-                animator.SetBool("Grounded", false);
+                animator.SetBool(TransitionParameter.Grounded.ToString(), false);
             }
         }
 

@@ -11,7 +11,7 @@ public class MoveForward : StateData
 
     public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
     {
-        animator.SetBool("Attack", false);
+        animator.SetBool(TransitionParameter.Attack.ToString(), false);
     }
 
     public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
@@ -20,13 +20,13 @@ public class MoveForward : StateData
 
         if (control.MoveRight && control.MoveLeft)
         {
-            animator.SetBool("Move", false);
+            animator.SetBool(TransitionParameter.Move.ToString(), false);
             return;
         }
 
         if (!control.MoveRight && !control.MoveLeft)
         {
-            animator.SetBool("Move", false);
+            animator.SetBool(TransitionParameter.Move.ToString(), false);
             return;
         }
 
@@ -52,12 +52,12 @@ public class MoveForward : StateData
 
         if (control.Attack)
         {
-            animator.SetBool("Attack", true);
+            animator.SetBool(TransitionParameter.Attack.ToString(), true);
         }
 
         if (control.Jump)
         {
-            animator.SetBool("Jump", true);
+            animator.SetBool(TransitionParameter.Jump.ToString(), true);
         }
     }
 

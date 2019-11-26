@@ -17,7 +17,7 @@ public class ICheckAttack : StateData
 
         if (control.Attack)
         {
-            animator.SetBool("Attack", true);
+            animator.SetBool(TransitionParameter.Attack.ToString(), true);
         }
     }
 

@@ -13,7 +13,7 @@ public class DoubleJump : StateData
     {
         //characterState.GetCharacterControl(animator).RIGID_BODY.velocity = Vector3.zero; -- Stopping Velocity before adding force again
         characterState.GetCharacterControl(animator).RIGID_BODY.AddForce(Vector3.up * jumpForce);
-        animator.SetBool("Grounded", false);
+        animator.SetBool(TransitionParameter.Grounded.ToString(), false);
     }
 
     public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)

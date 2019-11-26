@@ -18,7 +18,7 @@ public class CharacterSwitch : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("CharacterSwitch") && Input.GetAxisRaw("CharacterSwitch") > 0)
+        if (VirtualInputManager.Instance.CharacterSwitchRight)
         {
 
                 if (characterSwitch == 1)
@@ -48,7 +48,7 @@ public class CharacterSwitch : MonoBehaviour
                 }
         }
 
-        if (Input.GetButtonDown("CharacterSwitch") && Input.GetAxisRaw("CharacterSwitch") < 0)
+        if (VirtualInputManager.Instance.CharacterSwitchLeft)
         {
 
             if (characterSwitch == 1)

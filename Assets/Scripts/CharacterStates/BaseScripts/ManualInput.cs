@@ -34,6 +34,27 @@ public class ManualInput : MonoBehaviour
             characterControl.MoveLeft = false;
         }
 
+        // move up and down
+        if (VirtualInputManager.Instance.MoveUp)
+        {
+            characterControl.MoveUp = true;
+        }
+
+        else
+        {
+            characterControl.MoveUp = false;
+        }
+
+        if (VirtualInputManager.Instance.MoveDown)
+        {
+            characterControl.MoveDown = true;
+        }
+
+        else
+        {
+            characterControl.MoveDown = false;
+        }
+
         // jump
         if (Input.GetKey(KeyCode.Space))
         {
@@ -54,6 +75,38 @@ public class ManualInput : MonoBehaviour
         else
         {
             characterControl.Attack = false;
+        }
+
+        // ranged attack
+        if (Input.GetKey(KeyCode.RightShift))
+        {
+            characterControl.RangedAttack = true;
+        }
+
+        else
+        {
+            characterControl.RangedAttack = false;
+        }
+
+        // character switch
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            characterControl.CharacterSwitchRight = true;
+        }
+
+        else
+        {
+            characterControl.CharacterSwitchRight = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            characterControl.CharacterSwitchLeft = true;
+        }
+
+        else
+        {
+            characterControl.CharacterSwitchLeft = false;
         }
     }
 }

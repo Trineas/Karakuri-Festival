@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7cce6d0a038618f4d87455a14448f7d8, type: 3}
-  m_Name: Baku_Fall_Attack
+  m_Name: Taku_JumpAttack
   m_EditorClassIdentifier: 
   StartAttackTime: 0.15
-  EndAttackTime: 0.99
-  ColliderNames: []
-  MustCollide: 0
+  EndAttackTime: 0.5
+  ColliderNames:
+  - mixamorig:RightHand
+  MustCollide: 1
   MustFaceAttacker: 0
-  LethalRange: 6
-  MaxHits: 10
+  LethalRange: 0
+  MaxHits: 1
