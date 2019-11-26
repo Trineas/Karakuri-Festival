@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -6004623044929615040}
   - component: {fileID: 8263500228098376190}
   - component: {fileID: -4837811151276023509}
+  - component: {fileID: 1913534000529837216}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -138,6 +139,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a2a135e7c0dfdf4ca1af253558f9560, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1913534000529837216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7492223658605139860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dad1aab65158ef4c94588858b77c73f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Spawnpoint: {fileID: 360766897205599079, guid: 20979978eb32f2a468482517d35a364a,
+    type: 3}
+  bottomBound: -4
 --- !u!1001 &7492223658567884614
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -145,6 +161,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7492223658605139864}
     m_Modifications:
+    - target: {fileID: 4767798107280523993, guid: c21b51e668f7eda409a7174b84e3ff87,
+        type: 3}
+      propertyPath: m_Name
+      value: Goemon
+      objectReference: {fileID: 0}
     - target: {fileID: 8390706137941061834, guid: c21b51e668f7eda409a7174b84e3ff87,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -200,11 +221,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4767798107280523993, guid: c21b51e668f7eda409a7174b84e3ff87,
-        type: 3}
-      propertyPath: m_Name
-      value: Goemon
-      objectReference: {fileID: 0}
     - target: {fileID: 1831065460157711803, guid: c21b51e668f7eda409a7174b84e3ff87,
         type: 3}
       propertyPath: m_Name
@@ -230,6 +246,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7492223658605139864}
     m_Modifications:
+    - target: {fileID: 250586864582335180, guid: c2c5640ebddb2514997571a0b7371889,
+        type: 3}
+      propertyPath: m_Name
+      value: Ebisumaru
+      objectReference: {fileID: 0}
     - target: {fileID: 3828370519029835999, guid: c2c5640ebddb2514997571a0b7371889,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -299,11 +320,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 250586864582335180, guid: c2c5640ebddb2514997571a0b7371889,
-        type: 3}
-      propertyPath: m_Name
-      value: Ebisumaru
       objectReference: {fileID: 0}
     - target: {fileID: 9066886696735548070, guid: c2c5640ebddb2514997571a0b7371889,
         type: 3}

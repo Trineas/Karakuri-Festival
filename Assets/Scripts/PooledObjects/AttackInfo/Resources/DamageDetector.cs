@@ -91,6 +91,11 @@ public class DamageDetector : MonoBehaviour
 
     private void TakeDamage(AttackInfo info)
     {
+        if (!info.MustCollide)
+        {
+            CameraManager.Instance.ShakeCamera(0.25f);
+        }
+
         Debug.Log(info.Attacker.gameObject.name + " hits: " + this.gameObject.name);
         Debug.Log(this.gameObject.name + " plays: " + PickDeathAnimation.ToString());
 

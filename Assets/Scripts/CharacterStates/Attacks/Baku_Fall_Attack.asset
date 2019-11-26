@@ -17,5 +17,5 @@ MonoBehaviour:
   ColliderNames: []
   MustCollide: 0
   MustFaceAttacker: 0
-  LethalRange: 4
+  LethalRange: 6
   MaxHits: 10
