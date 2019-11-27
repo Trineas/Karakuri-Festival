@@ -8,7 +8,7 @@ public class PoolObject : MonoBehaviour
     public float ScheduledOffTime;
     private Coroutine OffRoutine;
 
-    private void OnEabled()
+    private void OnEnable()
     {
         if (OffRoutine != null)
         {
@@ -23,6 +23,9 @@ public class PoolObject : MonoBehaviour
 
     public void TurnOff()
     {
+        this.transform.parent = null;
+        this.transform.position = Vector3.zero;
+        this.transform.rotation = Quaternion.identity;
         PoolManager.Instance.AddObject(this);
     }
 

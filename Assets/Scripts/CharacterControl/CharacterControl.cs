@@ -10,6 +10,7 @@ public enum TransitionParameter
     ForceTransition,
     Grounded,
     Attack,
+    RangedAttack,
     TransitionIndex,
 }
 
@@ -34,6 +35,7 @@ public class CharacterControl : MonoBehaviour
     public float PullMultiplier;
 
     private List<TriggerDetector> TriggerDetectors = new List<TriggerDetector>();
+    private Dictionary<string, GameObject> ChildObjects = new Dictionary<string, GameObject>();
 
     private Rigidbody rigid;
     public Rigidbody RIGID_BODY
@@ -129,25 +131,27 @@ public class CharacterControl : MonoBehaviour
         float front = box.bounds.center.z + box.bounds.extents.z;
         float back = box.bounds.center.z - box.bounds.extents.z;
 
-        GameObject bottomFront = CreateEdgeSphere(new Vector3(front, bottom, 0f));
+        GameObject bottomFrontHor = CreateEdgeSphere(new Vector3(front, bottom, 0f));
+        GameObject bottomFrontVer = CreateEdgeSphere(new Vector3(front, 0.05f, 0f));
         GameObject bottomBack = CreateEdgeSphere(new Vector3(back, bottom, 0f));
         GameObject topFront = CreateEdgeSphere(new Vector3(front, top, 0f));
 
-        bottomFront.transform.parent = this.transform;
+        bottomFrontHor.transform.parent = this.transform;
+        bottomFrontVer.transform.parent = this.transform;
         bottomBack.transform.parent = this.transform;
         topFront.transform.parent = this.transform;
 
-        BottomSpheres.Add(bottomFront);
+        BottomSpheres.Add(bottomFrontHor);
         BottomSpheres.Add(bottomBack);
 
-        FrontSpheres.Add(bottomFront);
+        FrontSpheres.Add(bottomFrontVer);
         FrontSpheres.Add(topFront);
 
-        float horSec = (bottomFront.transform.position - bottomBack.transform.position).magnitude / 5f;
-        CreateMiddleSpheres(bottomFront, -this.transform.right, horSec, 4, BottomSpheres);
+        float horSec = (bottomFrontHor.transform.position - bottomBack.transform.position).magnitude / 5f;
+        CreateMiddleSpheres(bottomFrontHor, -this.transform.right, horSec, 4, BottomSpheres);
 
-        float verSec = (bottomFront.transform.position - topFront.transform.position).magnitude / 10f;
-        CreateMiddleSpheres(bottomFront, this.transform.up, verSec, 9, FrontSpheres);
+        float verSec = (bottomFrontVer.transform.position - topFront.transform.position).magnitude / 10f;
+        CreateMiddleSpheres(bottomFrontVer, this.transform.up, verSec, 9, FrontSpheres);
     }
 
     private void FixedUpdate()
@@ -211,6 +215,27 @@ public class CharacterControl : MonoBehaviour
         {
             return false;
         }
+    }
+
+    public GameObject GetChildObj(string name)
+    {
+        if (ChildObjects.ContainsKey(name))
+        {
+            return ChildObjects[name];
+        }
+
+        Transform[] arr = this.gameObject.GetComponentsInChildren<Transform>();
+
+        foreach (Transform t in arr)
+        {
+            if (t.gameObject.name.Equals(name))
+            {
+                ChildObjects.Add(name, t.gameObject);
+                return t.gameObject;
+            }
+        }
+
+        return null;
     }
 }
  

@@ -1033,7 +1033,7 @@ Transform:
   m_LocalPosition: {x: -8.881784e-18, y: 0.15679257, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 6224918476715294632}
+  - {fileID: 4157485143713604284}
   m_Father: {fileID: 6319165501354065973}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1816,93 +1816,33 @@ Transform:
   m_Father: {fileID: 5152302309478723480}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1376393468246021298
-PrefabInstance:
+--- !u!1 &8578742941808982887
+GameObject:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 7080875161745127337}
-    m_Modifications:
-    - target: {fileID: -927199367670048503, guid: c48e99c51261ab44ca0610bb5e762025,
-        type: 3}
-      propertyPath: m_Name
-      value: Ladle
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: c48e99c51261ab44ca0610bb5e762025,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.034
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: c48e99c51261ab44ca0610bb5e762025,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.426
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: c48e99c51261ab44ca0610bb5e762025,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.005
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: c48e99c51261ab44ca0610bb5e762025,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.017328246
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: c48e99c51261ab44ca0610bb5e762025,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.6213852
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: c48e99c51261ab44ca0610bb5e762025,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.6883392
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: c48e99c51261ab44ca0610bb5e762025,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.37385732
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: c48e99c51261ab44ca0610bb5e762025,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: c48e99c51261ab44ca0610bb5e762025,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 57.404003
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: c48e99c51261ab44ca0610bb5e762025,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 65.060005
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: c48e99c51261ab44ca0610bb5e762025,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -84.485
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: c48e99c51261ab44ca0610bb5e762025,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: c48e99c51261ab44ca0610bb5e762025,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: c48e99c51261ab44ca0610bb5e762025,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c48e99c51261ab44ca0610bb5e762025, type: 3}
---- !u!4 &6224918476715294632 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: c48e99c51261ab44ca0610bb5e762025,
-    type: 3}
-  m_PrefabInstance: {fileID: 1376393468246021298}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4157485143713604284}
+  m_Layer: 0
+  m_Name: WeaponPosition - Ladle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4157485143713604284
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8578742941808982887}
+  m_LocalRotation: {x: 0.6883267, y: -0.40512735, z: 0.017874328, w: 0.60146385}
+  m_LocalPosition: {x: -0.034, y: 0.426, z: -0.005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7080875161745127337}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 57.404, y: -120.8, z: -84.485}

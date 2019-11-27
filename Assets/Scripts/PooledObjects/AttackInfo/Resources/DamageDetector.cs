@@ -49,6 +49,15 @@ public class DamageDetector : MonoBehaviour
                 continue;
             }
 
+            if (info.MustFaceAttacker)
+            {
+                Vector3 vec = this.transform.position - info.Attacker.transform.position;
+                if (vec.z * info.Attacker.transform.forward.z < 0f)
+                {
+                    continue;
+                }
+            }
+
             if (info.MustCollide)
             {
                 if (IsCollided(info))
@@ -91,6 +100,7 @@ public class DamageDetector : MonoBehaviour
 
     private void TakeDamage(AttackInfo info)
     {
+        // shake camera on aoe
         if (!info.MustCollide)
         {
             CameraManager.Instance.ShakeCamera(0.25f);

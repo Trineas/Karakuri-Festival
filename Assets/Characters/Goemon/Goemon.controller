@@ -28,7 +28,8 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -1118123325139433429}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: 5857081298207862250}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -84,7 +85,8 @@ MonoBehaviour:
   ListAbilityData:
   - {fileID: 11400000, guid: 06ccc8f76278ed84ebc2dd4161cdd0f1, type: 2}
   - {fileID: 11400000, guid: 0578054cf402c834a8a384c6185602b3, type: 2}
-  - {fileID: 11400000, guid: b69c4b29aae9e35488fe2f8499edce7f, type: 2}
+  - {fileID: 11400000, guid: a5411b965285785468fe3601ff3f66c1, type: 2}
+  - {fileID: 11400000, guid: 9866c60480650b54e9ec0c13eb7201aa, type: 2}
 --- !u!1101 &-7528915306866324802
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -719,6 +721,18 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &-637240798726100948
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706d7587dded32e4e80bbfdaa3f3a1ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -733,49 +747,49 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Jump
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: ForceTransition
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Grounded
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: DoubleJump
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Attack
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: RangedAttack
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: TransitionIndex
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -1018,7 +1032,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b69c4b29aae9e35488fe2f8499edce7f, type: 2}
   - {fileID: 11400000, guid: 94e5e467eac5fba4b93e5b17c59d2311, type: 2}
   - {fileID: 11400000, guid: b5da65fb55a54b74f9a854a3b98a2989, type: 2}
-  - {fileID: 0}
   - {fileID: 11400000, guid: e6596b2c59e00f548b1c6a5d4c776988, type: 2}
 --- !u!114 &5398402650789366310
 MonoBehaviour:
@@ -1036,6 +1049,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 957d3373dce31a3458c589c650f4c489, type: 2}
   - {fileID: 11400000, guid: b5da65fb55a54b74f9a854a3b98a2989, type: 2}
   - {fileID: 11400000, guid: 9866c60480650b54e9ec0c13eb7201aa, type: 2}
+  - {fileID: 11400000, guid: a5411b965285785468fe3601ff3f66c1, type: 2}
 --- !u!1101 &5673702851677363043
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1112,6 +1126,23 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!114 &5857081298207862250
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c3d57005c32b084691486ba2dbf47c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListAbilityData:
+  - {fileID: 11400000, guid: ab5e0755a2de4164f8c27956ee0307d1, type: 2}
+  - {fileID: 11400000, guid: 06ccc8f76278ed84ebc2dd4161cdd0f1, type: 2}
+  - {fileID: 11400000, guid: b69c4b29aae9e35488fe2f8499edce7f, type: 2}
+  - {fileID: 11400000, guid: 052a027fab5cf7b4cba8ec28a9af32ec, type: 2}
 --- !u!1101 &5982935250277994758
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1255,7 +1286,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b69c4b29aae9e35488fe2f8499edce7f, type: 2}
   - {fileID: 11400000, guid: 94e5e467eac5fba4b93e5b17c59d2311, type: 2}
   - {fileID: 11400000, guid: b5da65fb55a54b74f9a854a3b98a2989, type: 2}
-  - {fileID: 0}
   - {fileID: 11400000, guid: e6596b2c59e00f548b1c6a5d4c776988, type: 2}
 --- !u!1101 &7587825217506528471
 AnimatorStateTransition:
