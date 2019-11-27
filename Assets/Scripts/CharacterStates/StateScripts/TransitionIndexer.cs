@@ -102,7 +102,7 @@ public class TransitionIndexer : StateData
                     break;
                 case TransitionConditionType.JUMP:
                     {
-                        if (!control.Jump)
+                        if (!control.animationProgress.JumpTriggered)
                         {
                             return false;
                         }

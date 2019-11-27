@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8263500228098376190}
   - component: {fileID: -4837811151276023509}
   - component: {fileID: 1913534000529837216}
+  - component: {fileID: 3467629015059864322}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -92,9 +93,15 @@ MonoBehaviour:
   SkinnedMeshAnimator: {fileID: 0}
   MoveRight: 0
   MoveLeft: 0
+  MoveUp: 0
+  MoveDown: 0
   Jump: 0
   DoubleJump: 0
   Attack: 0
+  RangedAttack: 0
+  CharacterSwitchRight: 0
+  CharacterSwitchLeft: 0
+  animationProgress: {fileID: 0}
   ColliderEdgePrefab: {fileID: 4999625950733286486, guid: d4ec0d3d6d9204048b1599a4f88ca925,
     type: 3}
   BottomSpheres: []
@@ -139,6 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a2a135e7c0dfdf4ca1af253558f9560, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DamageTaken: 0
 --- !u!114 &1913534000529837216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,7 +161,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Spawnpoint: {fileID: 360766897205599079, guid: 20979978eb32f2a468482517d35a364a,
     type: 3}
-  bottomBound: -4
+--- !u!114 &3467629015059864322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7492223658605139860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 455294c050a0df74e95cc3a62029355b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Jumped: 0
+  CameraShaken: 0
+  PoolObjectList: 
+  JumpTriggered: 0
+  MaxPressTime: 0.2
 --- !u!1001 &7492223658567884614
 PrefabInstance:
   m_ObjectHideFlags: 0

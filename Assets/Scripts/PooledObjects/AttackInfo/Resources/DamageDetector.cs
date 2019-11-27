@@ -7,8 +7,11 @@ public class DamageDetector : MonoBehaviour
     CharacterControl control;
     DeathAnimation PickDeathAnimation;
 
+    public int DamageTaken;
+
     private void Awake()
     {
+        DamageTaken = 0;
         control = GetComponent<CharacterControl>();
     }
 
@@ -86,10 +89,13 @@ public class DamageDetector : MonoBehaviour
             {
                 foreach (string name in info.ColliderNames)
                 {
-                    if (name == collider.gameObject.name)
+                    if (name.Equals(collider.gameObject.name))
                     {
-                        PickDeathAnimation = trigger.deathAnimation;
-                        return true;
+                        if (collider.transform.root.gameObject == info.Attacker.gameObject)
+                        {
+                            PickDeathAnimation = trigger.deathAnimation;
+                            return true;
+                        }
                     }
                 }
             }
@@ -100,6 +106,12 @@ public class DamageDetector : MonoBehaviour
 
     private void TakeDamage(AttackInfo info)
     {
+        // hp system for later
+        if (DamageTaken > 0)
+        {
+            return;
+        }
+
         // shake camera on aoe
         if (!info.MustCollide)
         {
@@ -109,11 +121,12 @@ public class DamageDetector : MonoBehaviour
         Debug.Log(info.Attacker.gameObject.name + " hits: " + this.gameObject.name);
         Debug.Log(this.gameObject.name + " plays: " + PickDeathAnimation.ToString());
 
-        //control.SkinnedMeshAnimator.runtimeAnimatorController = info.AttackAbility.GetDeathAnimator();
         control.SkinnedMeshAnimator.runtimeAnimatorController = DeathAnimationManager.Instance.GetAnimator(PickDeathAnimation, info);
         info.CurrentHits++;
 
         control.GetComponent<BoxCollider>().enabled = false;
         control.RIGID_BODY.useGravity = false;
+
+        DamageTaken++;
     }
 }

@@ -11,6 +11,7 @@ public class Idle : StateData
         // disable?
         //animator.SetBool(TransitionParameter.Jump.ToString(), false);
         animator.SetBool(TransitionParameter.Attack.ToString(), false);
+        animator.SetBool(TransitionParameter.RangedAttack.ToString(), false);
     }
 
     public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
@@ -22,21 +23,30 @@ public class Idle : StateData
             animator.SetBool(TransitionParameter.Attack.ToString(), true);
         }
 
-        if (control.MoveRight)
+        if (control.RangedAttack)
         {
-            animator.SetBool(TransitionParameter.Move.ToString(), true);
+            animator.SetBool(TransitionParameter.RangedAttack.ToString(), true);
         }
 
-        if (control.MoveLeft)
-        {
-            animator.SetBool(TransitionParameter.Move.ToString(), true);
-        }
-
-        if (control.Jump)
+        if (control.animationProgress.JumpTriggered)
         {
             animator.SetBool(TransitionParameter.Jump.ToString(), true);
         }
 
+        if (control.MoveRight && control.MoveLeft)
+        {
+
+        }
+
+        else if (control.MoveRight)
+        {
+            animator.SetBool(TransitionParameter.Move.ToString(), true);
+        }
+
+        else if (control.MoveLeft)
+        {
+            animator.SetBool(TransitionParameter.Move.ToString(), true);
+        }
     }
 
     public override void OnExit(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)

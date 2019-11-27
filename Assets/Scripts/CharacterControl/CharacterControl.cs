@@ -27,6 +27,7 @@ public class CharacterControl : MonoBehaviour
     public bool RangedAttack;
     public bool CharacterSwitchRight;
     public bool CharacterSwitchLeft;
+    public AnimationProgress animationProgress;
     public GameObject ColliderEdgePrefab;
     public List<GameObject> BottomSpheres = new List<GameObject>();
     public List<GameObject> FrontSpheres = new List<GameObject>();
@@ -67,6 +68,8 @@ public class CharacterControl : MonoBehaviour
         {
             FaceForward(false);
         }
+
+        animationProgress = GetComponent<AnimationProgress>();
     }
 
     public List<TriggerDetector> GetAllTriggers()

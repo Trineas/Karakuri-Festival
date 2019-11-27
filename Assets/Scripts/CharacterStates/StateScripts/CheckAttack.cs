@@ -19,6 +19,11 @@ public class ICheckAttack : StateData
         {
             animator.SetBool(TransitionParameter.Attack.ToString(), true);
         }
+
+        if (control.RangedAttack)
+        {
+            animator.SetBool(TransitionParameter.RangedAttack.ToString(), true);
+        }
     }
 
     public override void OnExit(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)

@@ -13,10 +13,14 @@ public class Jump : StateData
 
     public override void OnEnter(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
     {
+        CharacterControl control = characterState.GetCharacterControl(animator);
+
         characterState.GetCharacterControl(animator).RIGID_BODY.AddForce(Vector3.up * jumpForce);
         animator.SetBool(TransitionParameter.Grounded.ToString(), false);
         animator.SetBool(TransitionParameter.Attack.ToString(), false);
+        animator.SetBool(TransitionParameter.RangedAttack.ToString(), false);
         animator.SetBool(TransitionParameter.DoubleJump.ToString(), false);
+        control.animationProgress.Jumped = true;
     }
 
     public override void UpdateAbility(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
@@ -26,10 +30,11 @@ public class Jump : StateData
         control.GravityMultiplier = Gravity.Evaluate(stateInfo.normalizedTime);
         control.PullMultiplier = Pull.Evaluate(stateInfo.normalizedTime);
         CheckDoubleJump(characterState, animator, stateInfo);
+        control.animationProgress.Jumped = true;
 
         if (control.Attack)
         {
-            animator.SetBool(TransitionParameter.Attack.ToString(), true);
+            animator.SetBool(TransitionParameter.RangedAttack.ToString(), true);
         }
     }
 
@@ -40,7 +45,7 @@ public class Jump : StateData
             if (stateInfo.normalizedTime < EndJumpTime + ((EndJumpTime - StartJumpTime) / 2f))
             {
                 CharacterControl control = characterState.GetCharacterControl(animator);
-                if (control.Jump)
+                if (control.animationProgress.JumpTriggered)
                 {
                     animator.SetBool(TransitionParameter.DoubleJump.ToString(), true);
                 }
@@ -50,7 +55,8 @@ public class Jump : StateData
 
     public override void OnExit(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
     {
-
+        CharacterControl control = characterState.GetCharacterControl(animator);
+        control.animationProgress.Jumped = false;
     }
 }
 
