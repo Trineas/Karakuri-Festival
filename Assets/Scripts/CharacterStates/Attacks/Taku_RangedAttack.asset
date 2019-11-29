@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartAttackTime: 0.3
   EndAttackTime: 5
-  ColliderNames: []
+  ColliderNames:
+  - Bowl
   MustCollide: 1
   MustFaceAttacker: 0
   LethalRange: 250
