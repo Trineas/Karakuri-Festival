@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Baku_RangedAttack_Weapon
   m_EditorClassIdentifier: 
   ObjectType: 3
-  SpawnTiming: 0
+  SpawnTiming: 0.1
   ParentObjectName: 
   StickToParent: 0

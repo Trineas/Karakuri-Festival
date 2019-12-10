@@ -121,6 +121,8 @@ public class DamageDetector : MonoBehaviour
         Debug.Log(info.Attacker.gameObject.name + " hits: " + this.gameObject.name);
         Debug.Log(this.gameObject.name + " plays: " + PickDeathAnimation.ToString());
 
+        //control.SkinnedMeshAnimator.SetBool(TransitionParameter.Death.ToString(), true);
+
         control.SkinnedMeshAnimator.runtimeAnimatorController = DeathAnimationManager.Instance.GetAnimator(PickDeathAnimation, info);
         info.CurrentHits++;
 

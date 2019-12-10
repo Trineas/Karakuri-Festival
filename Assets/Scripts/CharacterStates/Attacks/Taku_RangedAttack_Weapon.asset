@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Taku_RangedAttack_Weapon
   m_EditorClassIdentifier: 
   ObjectType: 2
-  SpawnTiming: 0
-  ParentObjectName: WeaponPosition - Ladle
-  StickToParent: 0
+  SpawnTiming: 0.35
+  ParentObjectName: WeaponPosition - Bowl
+  StickToParent: 1
