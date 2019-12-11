@@ -13,13 +13,10 @@ MonoBehaviour:
   m_Name: Taku_RangedAttack
   m_EditorClassIdentifier: 
   StartAttackTime: 0.3
-  EndAttackTime: 5
+  EndAttackTime: 3
   ColliderNames:
   - Bowl
   MustCollide: 1
   MustFaceAttacker: 0
-  LethalRange: 250
+  LethalRange: 0
   MaxHits: 1
-  Projectile: {fileID: 3962090099209671916, guid: 918f4b0cd5d94704b92390a059dbbd9f,
-    type: 3}
-  player: {fileID: 7492223658605139864, guid: a785d346de3594049b58b39882578366, type: 3}

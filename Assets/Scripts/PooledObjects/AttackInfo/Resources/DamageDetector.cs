@@ -104,7 +104,7 @@ public class DamageDetector : MonoBehaviour
         return false;
     }
 
-    private void TakeDamage(AttackInfo info)
+    public void TakeDamage(AttackInfo info)
     {
         // hp system for later
         if (DamageTaken > 0)
@@ -118,8 +118,8 @@ public class DamageDetector : MonoBehaviour
             CameraManager.Instance.ShakeCamera(0.25f);
         }
 
-        Debug.Log(info.Attacker.gameObject.name + " hits: " + this.gameObject.name);
-        Debug.Log(this.gameObject.name + " plays: " + PickDeathAnimation.ToString());
+        //Debug.Log(info.Attacker.gameObject.name + " hits: " + this.gameObject.name);
+        //Debug.Log(this.gameObject.name + " plays: " + PickDeathAnimation.ToString());
 
         //control.SkinnedMeshAnimator.SetBool(TransitionParameter.Death.ToString(), true);
 

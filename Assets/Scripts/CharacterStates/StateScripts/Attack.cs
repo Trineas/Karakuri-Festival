@@ -12,8 +12,6 @@ public class Attack : StateData
     public bool MustFaceAttacker;
     public float LethalRange;
     public int MaxHits;
-    public GameObject Projectile;
-    public Transform player;
 
     private List<AttackInfo> FinishedAttacks = new List<AttackInfo>();
 
@@ -49,14 +47,7 @@ public class Attack : StateData
         if (control.RangedAttack)
         {
             animator.SetBool(TransitionParameter.RangedAttack.ToString(), true);
-            ShootProjectile();
         }
-    }
-
-    public void ShootProjectile()
-    {
-        GameObject pjl = Instantiate(Projectile) as GameObject;
-        pjl.transform.position = player.transform.position;
     }
 
     public void RegisterAttack(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
