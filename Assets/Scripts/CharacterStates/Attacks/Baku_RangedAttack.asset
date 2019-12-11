@@ -20,3 +20,6 @@ MonoBehaviour:
   MustFaceAttacker: 0
   LethalRange: 250
   MaxHits: 1
+  Projectile: {fileID: 8456691680823670165, guid: 7e9d00544690b544ea5ca77c1fd863b1,
+    type: 3}
+  player: {fileID: 7492223658605139864, guid: a785d346de3594049b58b39882578366, type: 3}

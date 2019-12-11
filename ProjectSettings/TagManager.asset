@@ -4,8 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Hook
-  - Hookable
+  - Enemy
   layers:
   - Default
   - TransparentFX
