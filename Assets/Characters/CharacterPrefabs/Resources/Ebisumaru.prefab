@@ -55,13 +55,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250586864582335180}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 6097678989863377669}
   - {fileID: 3664743014802803289}
-  - {fileID: 1807939030341316888}
+  - {fileID: 1682392678556569363}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -707,7 +707,7 @@ Transform:
   m_Father: {fileID: 491028517800392589}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4061269319142073610
+--- !u!1 &4021152432273214947
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -715,7 +715,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1807939030341316888}
+  - component: {fileID: 1682392678556569363}
   m_Layer: 0
   m_Name: WeaponPosition - Bomb
   m_TagString: Untagged
@@ -723,16 +723,16 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1807939030341316888
+--- !u!4 &1682392678556569363
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4061269319142073610}
-  m_LocalRotation: {x: 0.000000010985332, y: 0.70710677, z: 0.000000052727955, w: 0.7071068}
+  m_GameObject: {fileID: 4021152432273214947}
+  m_LocalRotation: {x: -0, y: -0, z: 6.962985e-12, w: 1}
   m_LocalPosition: {x: -0.287, y: 0.48, z: 0.349}
-  m_LocalScale: {x: 0.33333367, y: 0.33333343, z: 0.33333367}
+  m_LocalScale: {x: 0.33333343, y: 0.33333343, z: 0.33333334}
   m_Children: []
   m_Father: {fileID: 3828370519029835999}
   m_RootOrder: 2

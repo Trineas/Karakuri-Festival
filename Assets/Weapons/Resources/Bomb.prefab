@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4829949658634127238}
   - component: {fileID: 4493584316666166704}
   - component: {fileID: 7881548162063450441}
+  - component: {fileID: -437463709412115478}
   - component: {fileID: -4873109755596126914}
-  - component: {fileID: 4056832471552445289}
   - component: {fileID: 1890734776529684008}
   - component: {fileID: -5228890120979882169}
   m_Layer: 0
@@ -82,6 +82,21 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &-437463709412115478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8456691680823670165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 643804996ab9559439ba2483eae0be39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  control: {fileID: 0}
+  speed: 5
+  height: 5
 --- !u!114 &-4873109755596126914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,19 +111,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolObjectType: 3
   ScheduledOffTime: 5
---- !u!114 &4056832471552445289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8456691680823670165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f685069ee949e1458f7f3ed6870b1cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
 --- !u!65 &1890734776529684008
 BoxCollider:
   m_ObjectHideFlags: 0

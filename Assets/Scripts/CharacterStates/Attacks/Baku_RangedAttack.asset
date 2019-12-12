@@ -9,14 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cce6d0a038618f4d87455a14448f7d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 159d5c02ba6b2b04592fe75a8e2f8379, type: 3}
   m_Name: Baku_RangedAttack
   m_EditorClassIdentifier: 
-  StartAttackTime: 0.3
-  EndAttackTime: 3
-  ColliderNames:
-  - Bomb
-  MustCollide: 0
-  MustFaceAttacker: 0
-  LethalRange: 6
-  MaxHits: 10
+  ObjectType: 3
+  SpawnTiming: 0.45
+  SpawnPosition: WeaponPosition - Bomb
+  Amount: 1
+  Interval: 0.15

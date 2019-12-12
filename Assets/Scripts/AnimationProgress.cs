@@ -13,6 +13,9 @@ public class AnimationProgress : MonoBehaviour
     private CharacterControl control;
     private float PressTime;
 
+    [Header("Projectiles")]
+    public Coroutine SpawnProjectilesRoutine;
+
     public void Awake()
     {
         control = GetComponentInParent<CharacterControl>();
@@ -44,6 +47,31 @@ public class AnimationProgress : MonoBehaviour
         else
         {
             JumpTriggered = true;
+        }
+    }
+
+    public void SpawnProjectiles(SpawnProjectiles spawnData)
+    {
+        if (SpawnProjectilesRoutine == null)
+        {
+            SpawnProjectilesRoutine = StartCoroutine(_SpawnProjectiles(spawnData));
+        }
+    }
+
+    IEnumerator _SpawnProjectiles(SpawnProjectiles spawnData)
+    {
+        for (int i = 0; i < spawnData.Amount; i++)
+        {
+            GameObject obj = PoolManager.Instance.GetObject(PoolObjectType.BOWL);
+
+            GameObject pos = control.GetChildObj(spawnData.SpawnPosition);
+            obj.transform.position = pos.transform.position;
+
+            Projectile pro = obj.GetComponent<Projectile>();
+            pro.control = control;
+            pro.InitProjectile();
+
+            yield return new WaitForSeconds(spawnData.Interval);
         }
     }
 }

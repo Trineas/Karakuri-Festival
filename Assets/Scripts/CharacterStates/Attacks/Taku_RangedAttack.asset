@@ -9,14 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cce6d0a038618f4d87455a14448f7d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 159d5c02ba6b2b04592fe75a8e2f8379, type: 3}
   m_Name: Taku_RangedAttack
   m_EditorClassIdentifier: 
-  StartAttackTime: 0.3
-  EndAttackTime: 3
-  ColliderNames:
-  - Bowl
-  MustCollide: 1
-  MustFaceAttacker: 0
-  LethalRange: 0
-  MaxHits: 1
+  ObjectType: 2
+  SpawnTiming: 0.35
+  SpawnPosition: WeaponPosition - Bowl
+  Amount: 1
+  Interval: 0.15

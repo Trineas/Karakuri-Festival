@@ -71,7 +71,7 @@ public class KeyboardInput : MonoBehaviour
         }
 
         // ranged attack
-        if (Input.GetKeyDown(KeyCode.RightShift))
+        if (Input.GetKey(KeyCode.RightShift))
         {
             VirtualInputManager.Instance.RangedAttack = true;
         }

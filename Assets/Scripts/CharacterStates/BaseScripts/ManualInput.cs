@@ -67,7 +67,7 @@ public class ManualInput : MonoBehaviour
         }
 
         // attack
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKey(KeyCode.Return))
         {
             characterControl.Attack = true;
         }
@@ -78,7 +78,7 @@ public class ManualInput : MonoBehaviour
         }
 
         // ranged attack
-        if (Input.GetKeyDown(KeyCode.RightShift))
+        if (Input.GetKey(KeyCode.RightShift))
         {
             characterControl.RangedAttack = true;
         }
