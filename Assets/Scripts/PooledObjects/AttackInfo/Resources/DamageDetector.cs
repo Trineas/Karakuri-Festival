@@ -126,7 +126,7 @@ public class DamageDetector : MonoBehaviour
         control.SkinnedMeshAnimator.runtimeAnimatorController = DeathAnimationManager.Instance.GetAnimator(PickDeathAnimation, info);
         info.CurrentHits++;
 
-        control.GetComponent<BoxCollider>().enabled = false;
+        control.GetComponent<CapsuleCollider>().enabled = false;
         control.RIGID_BODY.useGravity = false;
 
         DamageTaken++;

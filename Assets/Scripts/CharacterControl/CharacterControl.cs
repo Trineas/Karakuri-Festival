@@ -113,7 +113,7 @@ public class CharacterControl : MonoBehaviour
     {
         RIGID_BODY.useGravity = false;
         RIGID_BODY.velocity = Vector3.zero;
-        this.gameObject.GetComponent<BoxCollider>().enabled = false;
+        this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
         SkinnedMeshAnimator.enabled = false;
         SkinnedMeshAnimator.avatar = null;
 
@@ -127,7 +127,7 @@ public class CharacterControl : MonoBehaviour
     // ground detection and collision
     private void SetColliderSpheres()
     {
-        BoxCollider box = GetComponent<BoxCollider>();
+        CapsuleCollider box = GetComponent<CapsuleCollider>();
 
         float bottom = box.bounds.center.y - box.bounds.extents.y;
         float top = box.bounds.center.y + box.bounds.extents.y;

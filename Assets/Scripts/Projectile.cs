@@ -60,11 +60,10 @@ public class Projectile : MonoBehaviour
 
         if (other.tag == "Destroyable")
         {
-           // for when projectile is changing depending on variable
-           // if (height > 0)
-           // {
+            if (height > 0)
+            {
                 Destroy(other.gameObject);
-           // }
+            }
 
             poolObj.TurnOff();
         }

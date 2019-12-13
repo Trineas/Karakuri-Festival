@@ -61,8 +61,8 @@ public class AnimationProgress : MonoBehaviour
     IEnumerator _SpawnProjectiles(SpawnProjectiles spawnData)
     {
         for (int i = 0; i < spawnData.Amount; i++)
-        {
-            GameObject obj = PoolManager.Instance.GetObject(PoolObjectType.BOWL);
+        {   
+            GameObject obj = PoolManager.Instance.GetObject(spawnData.ObjectType);
 
             GameObject pos = control.GetChildObj(spawnData.SpawnPosition);
             obj.transform.position = pos.transform.position;
