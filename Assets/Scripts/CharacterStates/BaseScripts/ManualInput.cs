@@ -56,7 +56,8 @@ public class ManualInput : MonoBehaviour
         }
 
         // jump
-        if (Input.GetKey(KeyCode.Space))
+        //if (Input.GetKey(KeyCode.Space))
+        if (VirtualInputManager.Instance.Jump)
         {
             characterControl.Jump = true;
         }
@@ -67,7 +68,8 @@ public class ManualInput : MonoBehaviour
         }
 
         // attack
-        if (Input.GetKey(KeyCode.Return))
+        //if (Input.GetKey(KeyCode.Return))
+        if (VirtualInputManager.Instance.Attack)
         {
             characterControl.Attack = true;
         }
@@ -78,7 +80,8 @@ public class ManualInput : MonoBehaviour
         }
 
         // ranged attack
-        if (Input.GetKey(KeyCode.RightShift))
+        //if (Input.GetKey(KeyCode.RightShift))
+        if (VirtualInputManager.Instance.RangedAttack)
         {
             characterControl.RangedAttack = true;
         }
@@ -89,7 +92,8 @@ public class ManualInput : MonoBehaviour
         }
 
         // character switch
-        if (Input.GetKeyDown(KeyCode.E))
+        //if (Input.GetKeyDown(KeyCode.E))
+        if (VirtualInputManager.Instance.CharacterSwitchLeft)
         {
             characterControl.CharacterSwitchRight = true;
         }
@@ -99,7 +103,8 @@ public class ManualInput : MonoBehaviour
             characterControl.CharacterSwitchRight = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        //if (Input.GetKeyDown(KeyCode.Q))
+        if (VirtualInputManager.Instance.CharacterSwitchRight)
         {
             characterControl.CharacterSwitchLeft = true;
         }
