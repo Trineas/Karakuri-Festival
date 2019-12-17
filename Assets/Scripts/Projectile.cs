@@ -43,15 +43,14 @@ public class Projectile : MonoBehaviour
             poolObj.TurnOff();
         }
 
-        // for enemy projectiles?
-        //if (other.tag == "Player")
-        // {
-        //     DamageDetector damage = other.gameObject.transform.root.GetComponent<DamageDetector>();
-        //     AttackInfo attack = new AttackInfo();
-        //     damage.TakeDamage(attack);
-        //
-        //    poolObj.TurnOff();
-        // }
+            if (other.tag == "Player")
+            {
+                DamageDetector damage = other.gameObject.transform.root.GetComponent<DamageDetector>();
+                AttackInfo attack = new AttackInfo();
+                damage.TakeDamage(attack);
+        
+                poolObj.TurnOff();
+            }
 
         if (other.tag == "Geometry")
         {

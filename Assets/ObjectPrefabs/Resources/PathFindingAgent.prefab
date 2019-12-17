@@ -209,11 +209,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FollowPlayer: 1
-  target: {fileID: 0}
-  StartPosition: {x: 0, y: 0, z: 0}
-  EndPosition: {x: 0, y: 0, z: 0}
+  target: {fileID: 7492223658605139860, guid: a785d346de3594049b58b39882578366, type: 3}
   StartSphere: {fileID: 3500954603260370643}
   EndSphere: {fileID: 8975506496814766844}
+  StartWalk: 0
 --- !u!1 &8975506496814766844
 GameObject:
   m_ObjectHideFlags: 0

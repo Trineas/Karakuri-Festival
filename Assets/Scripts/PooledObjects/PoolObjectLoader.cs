@@ -8,6 +8,7 @@ public enum PoolObjectType
     LADLE,
     BOWL,
     BOMB,
+    FIREBALL,
     BELLYFLOP_VFX,
 }
 
@@ -42,6 +43,11 @@ public class PoolObjectLoader : MonoBehaviour
             case PoolObjectType.BELLYFLOP_VFX:
                 {
                     obj = Instantiate(Resources.Load("VFX_HammerDown", typeof(GameObject)) as GameObject);
+                    break;
+                }
+            case PoolObjectType.FIREBALL:
+                {
+                    obj = Instantiate(Resources.Load("Fireball", typeof(GameObject)) as GameObject);
                     break;
                 }
         }

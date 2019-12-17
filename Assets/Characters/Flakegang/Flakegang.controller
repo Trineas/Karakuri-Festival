@@ -30,7 +30,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ListAbilityData:
   - {fileID: 11400000, guid: 06ccc8f76278ed84ebc2dd4161cdd0f1, type: 2}
-  - {fileID: 11400000, guid: 23d9723e5d2505140b308e4eb0967ed6, type: 2}
+  - {fileID: 11400000, guid: ae8c40c375f5ab74da5bc2c3c4ab08c7, type: 2}
   - {fileID: 11400000, guid: b69c4b29aae9e35488fe2f8499edce7f, type: 2}
 --- !u!1101 &-7528915306866324802
 AnimatorStateTransition:
@@ -66,7 +66,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions: []
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 731673493068688227}
+  m_DstState: {fileID: 0}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
@@ -245,7 +245,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions: []
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 731673493068688227}
+  m_DstState: {fileID: 0}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
@@ -392,7 +392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ListAbilityData:
-  - {fileID: 11400000, guid: 1bee9386c0cf2f3409315bf67ae9e75c, type: 2}
+  - {fileID: 11400000, guid: 86495f17a30d5374d971bf7bc8741de0, type: 2}
   - {fileID: 11400000, guid: 9866c60480650b54e9ec0c13eb7201aa, type: 2}
 --- !u!91 &9100000
 AnimatorController:
@@ -461,7 +461,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions: []
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 731673493068688227}
+  m_DstState: {fileID: 0}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
@@ -483,7 +483,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions: []
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 731673493068688227}
+  m_DstState: {fileID: 0}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
@@ -534,7 +534,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Goemon Run
+  m_Name: Zombie Run
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -591,7 +591,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Goemon Melee Attack
+  m_Name: Zombie Attack
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -736,7 +736,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions: []
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 731673493068688227}
+  m_DstState: {fileID: 0}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0

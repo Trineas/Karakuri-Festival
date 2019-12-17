@@ -118,15 +118,13 @@ public class DamageDetector : MonoBehaviour
             CameraManager.Instance.ShakeCamera(0.25f);
         }
 
-        //Debug.Log(info.Attacker.gameObject.name + " hits: " + this.gameObject.name);
-        //Debug.Log(this.gameObject.name + " plays: " + PickDeathAnimation.ToString());
-
         //control.SkinnedMeshAnimator.SetBool(TransitionParameter.Death.ToString(), true);
 
         control.SkinnedMeshAnimator.runtimeAnimatorController = DeathAnimationManager.Instance.GetAnimator(PickDeathAnimation, info);
         info.CurrentHits++;
 
         control.GetComponent<CapsuleCollider>().enabled = false;
+        control.GetComponent<BoxCollider>().enabled = false;
         control.RIGID_BODY.useGravity = false;
 
         DamageTaken++;

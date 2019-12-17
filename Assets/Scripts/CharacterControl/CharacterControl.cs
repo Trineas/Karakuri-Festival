@@ -27,7 +27,10 @@ public class CharacterControl : MonoBehaviour
     public bool RangedAttack;
     public bool CharacterSwitchRight;
     public bool CharacterSwitchLeft;
+
     public AnimationProgress animationProgress;
+    public DamageDetector damageDetector;
+
     public GameObject ColliderEdgePrefab;
     public List<GameObject> BottomSpheres = new List<GameObject>();
     public List<GameObject> FrontSpheres = new List<GameObject>();
@@ -70,6 +73,7 @@ public class CharacterControl : MonoBehaviour
         }
 
         animationProgress = GetComponent<AnimationProgress>();
+        damageDetector = GetComponentInChildren<DamageDetector>();
     }
 
     public List<TriggerDetector> GetAllTriggers()
@@ -127,12 +131,12 @@ public class CharacterControl : MonoBehaviour
     // ground detection and collision
     private void SetColliderSpheres()
     {
-        CapsuleCollider box = GetComponent<CapsuleCollider>();
+        CapsuleCollider cap = GetComponent<CapsuleCollider>();
 
-        float bottom = box.bounds.center.y - box.bounds.extents.y;
-        float top = box.bounds.center.y + box.bounds.extents.y;
-        float front = box.bounds.center.z + box.bounds.extents.z;
-        float back = box.bounds.center.z - box.bounds.extents.z;
+        float bottom = cap.bounds.center.y - cap.bounds.extents.y;
+        float top = cap.bounds.center.y + cap.bounds.extents.y;
+        float front = cap.bounds.center.z + cap.bounds.extents.z;
+        float back = cap.bounds.center.z - cap.bounds.extents.z;
 
         GameObject bottomFrontHor = CreateEdgeSphere(new Vector3(front, bottom, 0f));
         GameObject bottomFrontVer = CreateEdgeSphere(new Vector3(front, 0.05f, 0f));

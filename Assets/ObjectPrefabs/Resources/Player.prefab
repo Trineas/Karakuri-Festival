@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: -4837811151276023509}
   - component: {fileID: 1913534000529837216}
   - component: {fileID: 3467629015059864322}
+  - component: {fileID: 2370196958974563609}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -103,6 +104,7 @@ MonoBehaviour:
   CharacterSwitchRight: 0
   CharacterSwitchLeft: 0
   animationProgress: {fileID: 0}
+  damageDetector: {fileID: 0}
   ColliderEdgePrefab: {fileID: 4999625950733286486, guid: d4ec0d3d6d9204048b1599a4f88ca925,
     type: 3}
   BottomSpheres: []
@@ -179,6 +181,19 @@ MonoBehaviour:
   PoolObjectList: 
   JumpTriggered: 0
   MaxPressTime: 0.2
+--- !u!65 &2370196958974563609
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7492223658605139860}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.1, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &7492223658567884614
 PrefabInstance:
   m_ObjectHideFlags: 0

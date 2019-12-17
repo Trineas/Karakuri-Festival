@@ -40,8 +40,9 @@ public class CharacterState : StateMachineBehaviour
     public CharacterControl GetCharacterControl(Animator animator)
     {
         if (characterControl == null)
-        { 
-            characterControl = animator.GetComponentInParent<CharacterControl>();
+        {
+            characterControl = animator.transform.root.GetComponent<CharacterControl>();
+            //characterControl = animator.GetComponentInParent<CharacterControl>();
         }
         return characterControl;
     }
