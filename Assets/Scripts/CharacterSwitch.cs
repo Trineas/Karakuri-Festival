@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterSwitch : MonoBehaviour
 {
     GameObject character1, character2, character3;
-    int characterSwitch;
+    public int characterSwitch;
     public bool character3Enabled;
 
     void Start()
@@ -13,7 +13,7 @@ public class CharacterSwitch : MonoBehaviour
         characterSwitch = 1;
         character1 = GameObject.Find("Goemon");
         character2 = GameObject.Find("Ebisumaru");
-        //character3 = GameObject.Find("Sasuke");
+        //character3 = GameObject.Find("Yae");
     }
 
     void Update()
@@ -99,7 +99,7 @@ public class CharacterSwitch : MonoBehaviour
             character1.SetActive(false);
             character2.SetActive(false);
             //character3.SetActive(true);
-            //GameObject.Find("Player").GetComponent<CharacterControl>().SkinnedMeshAnimator = Resources.Load<Animator>("Sasuke");
+            //GameObject.Find("Player").GetComponent<CharacterControl>().SkinnedMeshAnimator = Resources.Load<Animator>("Yae");
         }
     }
     // particles for later?

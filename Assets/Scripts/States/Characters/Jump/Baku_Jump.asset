@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc421a787c0f5448b2f7c8f40c20a04, type: 3}
   m_Name: Baku_Jump
   m_EditorClassIdentifier: 
-  jumpForce: 350
-  StartJumpTime: 0
-  EndJumpTime: 0
+  jumpForce: 450
+  StartJumpTime: 0.15
+  EndJumpTime: 1
   Gravity:
     serializedVersion: 2
     m_Curve:

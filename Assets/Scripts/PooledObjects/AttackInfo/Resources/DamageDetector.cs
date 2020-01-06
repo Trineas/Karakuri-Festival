@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DamageDetector : MonoBehaviour
 {
@@ -11,7 +12,6 @@ public class DamageDetector : MonoBehaviour
 
     private void Awake()
     {
-        DamageTaken = 0;
         control = GetComponent<CharacterControl>();
     }
 
@@ -72,7 +72,7 @@ public class DamageDetector : MonoBehaviour
             else
             {
                 float dist = Vector3.SqrMagnitude(this.gameObject.transform.position - info.Attacker.transform.position);
-                Debug.Log(this.gameObject.name + "dist: " + dist.ToString());
+                //Debug.Log(this.gameObject.name + "dist: " + dist.ToString());
                 if (dist <= info.LethalRange)
                 {
                     TakeDamage(info);
@@ -106,10 +106,15 @@ public class DamageDetector : MonoBehaviour
 
     public void TakeDamage(AttackInfo info)
     {
-        // hp system for later
-        if (DamageTaken > 0)
+        if (DamageTaken >= 2)
         {
-            return;
+            control.SkinnedMeshAnimator.runtimeAnimatorController = DeathAnimationManager.Instance.GetAnimator(PickDeathAnimation, info);
+            info.CurrentHits++;
+
+            //control.SkinnedMeshAnimator.SetBool(TransitionParameter.Death.ToString(), true);
+            control.GetComponent<CapsuleCollider>().enabled = false;
+            control.GetComponent<BoxCollider>().enabled = false;
+            control.RIGID_BODY.useGravity = false;
         }
 
         // shake camera on aoe
@@ -118,15 +123,7 @@ public class DamageDetector : MonoBehaviour
             CameraManager.Instance.ShakeCamera(0.25f);
         }
 
-        //control.SkinnedMeshAnimator.SetBool(TransitionParameter.Death.ToString(), true);
-
-        control.SkinnedMeshAnimator.runtimeAnimatorController = DeathAnimationManager.Instance.GetAnimator(PickDeathAnimation, info);
-        info.CurrentHits++;
-
-        control.GetComponent<CapsuleCollider>().enabled = false;
-        control.GetComponent<BoxCollider>().enabled = false;
-        control.RIGID_BODY.useGravity = false;
-
         DamageTaken++;
+        return;
     }
 }

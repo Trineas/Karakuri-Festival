@@ -7,7 +7,7 @@ public class KeyboardInput : MonoBehaviour
     void Update()
     {
         // move left and right
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) || Input.GetAxis("Horizontal") > 0.01f)
         {
             VirtualInputManager.Instance.MoveRight = true;
         }
@@ -17,7 +17,7 @@ public class KeyboardInput : MonoBehaviour
             VirtualInputManager.Instance.MoveRight = false;
         }
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || Input.GetAxis("Horizontal") < -0.01f)
         {
             VirtualInputManager.Instance.MoveLeft = true;
         }
@@ -49,7 +49,7 @@ public class KeyboardInput : MonoBehaviour
         }
 
         // jump
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Joystick1Button0))
         {
             VirtualInputManager.Instance.Jump = true;
         }
@@ -60,7 +60,7 @@ public class KeyboardInput : MonoBehaviour
         }
 
         // attack
-        if (Input.GetKey(KeyCode.Return))
+        if (Input.GetKey(KeyCode.F) || Input.GetKeyDown(KeyCode.Joystick1Button2))
         {
             VirtualInputManager.Instance.Attack = true;
         }
@@ -71,7 +71,7 @@ public class KeyboardInput : MonoBehaviour
         }
 
         // ranged attack
-        if (Input.GetKey(KeyCode.RightShift))
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.Joystick1Button3))
         {
             VirtualInputManager.Instance.RangedAttack = true;
         }
@@ -82,7 +82,7 @@ public class KeyboardInput : MonoBehaviour
         }
 
         // character switch
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Joystick1Button4))
         {
             VirtualInputManager.Instance.CharacterSwitchRight = true;
         }
@@ -92,7 +92,7 @@ public class KeyboardInput : MonoBehaviour
             VirtualInputManager.Instance.CharacterSwitchRight = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Joystick1Button5))
         {
             VirtualInputManager.Instance.CharacterSwitchLeft = true;
         }

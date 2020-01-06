@@ -6,7 +6,6 @@ public class Waypoints : MonoBehaviour
 {
     public GameObject[] waypoints;
     int current = 0;
-    float rotSpeed;
     public float speed;
     float WPRadius = 1;
 
@@ -23,5 +22,6 @@ public class Waypoints : MonoBehaviour
         }
 
         transform.position = Vector3.MoveTowards(transform.position, waypoints[current].transform.position, Time.deltaTime * speed);
+        transform.rotation = waypoints[current].transform.rotation;
     }
 }

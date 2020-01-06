@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc421a787c0f5448b2f7c8f40c20a04, type: 3}
   m_Name: Taku_Jump
   m_EditorClassIdentifier: 
-  jumpForce: 400
+  jumpForce: 450
   StartJumpTime: 0.15
   EndJumpTime: 1
   Gravity:
