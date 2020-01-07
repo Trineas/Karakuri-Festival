@@ -36,7 +36,7 @@ public class CharacterState : StateMachineBehaviour
     }
 
 
-    private CharacterControl characterControl;
+    public CharacterControl characterControl;
     public CharacterControl GetCharacterControl(Animator animator)
     {
         if (characterControl == null)
@@ -45,5 +45,15 @@ public class CharacterState : StateMachineBehaviour
             //characterControl = animator.GetComponentInParent<CharacterControl>();
         }
         return characterControl;
+    }
+
+    public WallJumpTrigger wallJumpTrigger;
+    public WallJumpTrigger GetWalljumpTrigger(Animator animator)
+    {
+        if (wallJumpTrigger == null)
+        {
+            wallJumpTrigger = animator.transform.root.GetComponent<WallJumpTrigger>();
+        }
+        return wallJumpTrigger;
     }
 }

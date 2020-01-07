@@ -8,6 +8,7 @@ public class Jump : StateData
     public float jumpForce;
     public float StartJumpTime;
     public float EndJumpTime;
+    public bool nearWall;
     public AnimationCurve Gravity;
     public AnimationCurve Pull;
 
@@ -20,6 +21,7 @@ public class Jump : StateData
         animator.SetBool(TransitionParameter.Attack.ToString(), false);
         animator.SetBool(TransitionParameter.RangedAttack.ToString(), false);
         animator.SetBool(TransitionParameter.DoubleJump.ToString(), false);
+        animator.SetBool(TransitionParameter.WallJump.ToString(), false);
         control.animationProgress.Jumped = true;
     }
 
@@ -29,7 +31,7 @@ public class Jump : StateData
 
         control.GravityMultiplier = Gravity.Evaluate(stateInfo.normalizedTime);
         control.PullMultiplier = Pull.Evaluate(stateInfo.normalizedTime);
-        CheckDoubleJump(characterState, animator, stateInfo);
+        CheckExtraJumps(characterState, animator, stateInfo);
         control.animationProgress.Jumped = true;
 
         if (control.Attack)
@@ -38,16 +40,23 @@ public class Jump : StateData
         }
     }
 
-    public void CheckDoubleJump(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
+    public void CheckExtraJumps(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
     {
         if (stateInfo.normalizedTime >= StartJumpTime + ((EndJumpTime - StartJumpTime) / 3f))
         {
             if (stateInfo.normalizedTime < EndJumpTime + ((EndJumpTime - StartJumpTime) / 2f))
             {
                 CharacterControl control = characterState.GetCharacterControl(animator);
+                WallJumpTrigger wjt = characterState.GetWalljumpTrigger(animator);
+
                 if (control.animationProgress.JumpTriggered)
                 {
                     animator.SetBool(TransitionParameter.DoubleJump.ToString(), true);
+
+                    if (wjt.nearWall == true)
+                    {
+                        animator.SetBool(TransitionParameter.WallJump.ToString(), true);
+                    }
                 }
             }
         }
@@ -56,6 +65,7 @@ public class Jump : StateData
     public override void OnExit(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
     {
         CharacterControl control = characterState.GetCharacterControl(animator);
+
         control.animationProgress.Jumped = false;
     }
 }

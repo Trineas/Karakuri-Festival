@@ -7,6 +7,7 @@ public enum TransitionParameter
     Move,
     Jump,
     DoubleJump,
+    WallJump,
     ForceTransition,
     Grounded,
     Attack,

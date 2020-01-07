@@ -9,6 +9,8 @@ public enum PoolObjectType
     BOWL,
     BOMB,
     FIREBALL,
+    RIFLE,
+    CORK,
     BELLYFLOP_VFX,
 }
 
@@ -48,6 +50,16 @@ public class PoolObjectLoader : MonoBehaviour
             case PoolObjectType.FIREBALL:
                 {
                     obj = Instantiate(Resources.Load("Fireball", typeof(GameObject)) as GameObject);
+                    break;
+                }
+            case PoolObjectType.RIFLE:
+                {
+                    obj = Instantiate(Resources.Load("RIFLE", typeof(GameObject)) as GameObject);
+                    break;
+                }
+            case PoolObjectType.CORK:
+                {
+                    obj = Instantiate(Resources.Load("CORK", typeof(GameObject)) as GameObject);
                     break;
                 }
         }

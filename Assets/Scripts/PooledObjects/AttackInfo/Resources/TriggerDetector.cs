@@ -26,7 +26,6 @@ public class TriggerDetector : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-
         if (owner.RagdollParts.Contains(col))
         {
             return;
@@ -56,7 +55,5 @@ public class TriggerDetector : MonoBehaviour
         {
             CollidingParts.Remove(attacker);
         }
-
     }
-
 }
