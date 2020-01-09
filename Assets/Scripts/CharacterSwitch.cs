@@ -11,7 +11,6 @@ public class CharacterSwitch : MonoBehaviour
     void Start()
     {
         characterSwitch = 1;
-        //character3Enabled = false;
         character1 = GameObject.Find("Goemon");
         character2 = GameObject.Find("Ebisumaru");
         character3 = GameObject.Find("Yae");

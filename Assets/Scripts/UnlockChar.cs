@@ -7,11 +7,11 @@ public class UnlockChar : MonoBehaviour
 {
     public GameObject player;
     public GameObject yaeObject;
-    public Text unlockChar3;
+    public Text unlockText;
 
     void Start()
     {
-        unlockChar3.gameObject.SetActive(false);
+        unlockText.gameObject.SetActive(false);
     }
 
     void OnTriggerEnter(Collider other)
@@ -20,7 +20,7 @@ public class UnlockChar : MonoBehaviour
 
         if (other.tag == "Player")
         {
-            unlockChar3.gameObject.SetActive(true);
+            unlockText.gameObject.SetActive(true);
             cw.character3Enabled = true;
             Destroy(yaeObject.gameObject);
             Destroy(this.gameObject, 5f);

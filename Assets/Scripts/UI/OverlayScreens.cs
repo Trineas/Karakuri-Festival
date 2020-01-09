@@ -7,13 +7,10 @@ public class OverlayScreens : MonoBehaviour
 {
     public Image title;
     public Image pauseScreen;
-    //public Image characterScreen;
     public Image gameOver;
-    //public Image hud;
 
     public bool titleActive;
     public bool pauseActive;
-    //public bool charscreenActive;
 
     public GameObject player;
 
@@ -21,93 +18,40 @@ public class OverlayScreens : MonoBehaviour
     {
         titleActive = true;
         pauseActive = false;
-        //charscreenActive = false;
-        //hud.gameObject.SetActive(false);
         title.gameObject.SetActive(true);
         Time.timeScale = 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // title screen
-        if (titleActive)
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Joystick1Button7))
         {
-            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Joystick1Button7))
+            if (titleActive)
             {
                 titleActive = false;
                 title.gameObject.SetActive(false);
-                //hud.gameObject.SetActive(true);
                 Time.timeScale = 1;
             }
-        }
 
-        // pause screen
-        if (!titleActive)
-        {
-            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Joystick1Button7))
+            else if (!titleActive)
             {
-                //charscreenActive = false;
-                //characterScreen.gameObject.SetActive(false);
-
-                pauseActive = true;
-                pauseScreen.gameObject.SetActive(true);
-
-                Time.timeScale = 0;
-            }
-
-            if (pauseActive)
-            {
-                if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Joystick1Button7))
-                {
-                    pauseActive = false;
-                    pauseScreen.gameObject.SetActive(false);
-
-                    Time.timeScale = 1;
-                }
-
-                if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Joystick1Button6))
-                {
-                    //charscreenActive = true;
-                    //characterScreen.gameObject.SetActive(true);
-
-                    Time.timeScale = 0;
-                }
-            }
-
-            // character screen
-            /*if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Joystick1Button6))
-            {
-                pauseActive = false;
-                pauseScreen.gameObject.SetActive(false);
-
-                charscreenActive = true;
-                characterScreen.gameObject.SetActive(true);
-
-                Time.timeScale = 0;
-            }
-
-            if (charscreenActive)
-            {
-                if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Joystick1Button6))
-                {
-                    charscreenActive = false;
-                    characterScreen.gameObject.SetActive(false);
-
-                    Time.timeScale = 1;
-                }
-
-                if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Joystick1Button7))
+                if (!pauseActive)
                 {
                     pauseActive = true;
                     pauseScreen.gameObject.SetActive(true);
-
                     Time.timeScale = 0;
                 }
-            }*/
+
+                else if (pauseActive)
+                {
+                    pauseActive = false;
+                    pauseScreen.gameObject.SetActive(false);
+                    Time.timeScale = 1;
+                }
+            }
         }
 
-        // game over screen on enough damage taken
+        // game over screen on x damage taken
         DamageDetector dd = player.gameObject.transform.root.GetComponent<DamageDetector>();
 
         if (dd.DamageTaken >= 3)
