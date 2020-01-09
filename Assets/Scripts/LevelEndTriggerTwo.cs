@@ -7,13 +7,20 @@ using UnityEngine.SceneManagement;
 public class LevelEndTriggerTwo : MonoBehaviour
 {
     public Text levelComplete;
+    public float delay = 3f;
 
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
             levelComplete.gameObject.SetActive(true);
-            SceneManager.LoadScene("03_Level_03");
+            StartCoroutine(LoadLevelAfterDelay(delay));
         }
+    }
+
+    IEnumerator LoadLevelAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene("03_Level_03"); ;
     }
 }

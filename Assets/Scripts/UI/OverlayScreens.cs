@@ -16,10 +16,13 @@ public class OverlayScreens : MonoBehaviour
 
     void Start()
     {
-        titleActive = true;
         pauseActive = false;
-        title.gameObject.SetActive(true);
-        Time.timeScale = 0;
+
+        if (titleActive)
+        {
+            title.gameObject.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 
     void Update()

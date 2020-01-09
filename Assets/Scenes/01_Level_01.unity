@@ -15775,7 +15775,7 @@ MonoBehaviour:
   title: {fileID: 927166768}
   pauseScreen: {fileID: 1172323370}
   gameOver: {fileID: 1812396976}
-  titleActive: 0
+  titleActive: 1
   pauseActive: 0
   player: {fileID: 1631969128}
 --- !u!114 &1847903956
