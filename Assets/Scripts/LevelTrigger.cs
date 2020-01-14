@@ -10,6 +10,8 @@ public class LevelTrigger : MonoBehaviour
     public GameObject player;
     public Image gameOver;
 
+    public OverlayScreens overlayScreens;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Joystick1Button6))
@@ -30,6 +32,7 @@ public class LevelTrigger : MonoBehaviour
 
         if (player.transform.position.y < yboundary.transform.position.y)
         {
+            overlayScreens.gameoverActive = true;
             gameOver.gameObject.SetActive(true);
             Time.timeScale = 0;
         }

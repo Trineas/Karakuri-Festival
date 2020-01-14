@@ -11,12 +11,14 @@ public class OverlayScreens : MonoBehaviour
 
     public bool titleActive;
     public bool pauseActive;
+    public bool gameoverActive;
 
     public GameObject player;
 
     void Start()
     {
         pauseActive = false;
+        gameoverActive = false;
 
         if (titleActive)
         {
@@ -36,7 +38,7 @@ public class OverlayScreens : MonoBehaviour
                 Time.timeScale = 1;
             }
 
-            else if (!titleActive)
+            else if (!titleActive && !gameoverActive)
             {
                 if (!pauseActive)
                 {
@@ -59,6 +61,7 @@ public class OverlayScreens : MonoBehaviour
 
         if (dd.DamageTaken >= 3)
         {
+            gameoverActive = true;
             gameOver.gameObject.SetActive(true);
         }
     }

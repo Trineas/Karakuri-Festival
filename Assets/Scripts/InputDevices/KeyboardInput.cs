@@ -7,7 +7,7 @@ public class KeyboardInput : MonoBehaviour
     void Update()
     {
         // move left and right
-        if (Input.GetKey(KeyCode.D) || Input.GetAxis("Horizontal") > 0.01f)
+        if (Input.GetKey(KeyCode.D) || Input.GetAxis("Horizontal") > 0.1f)
         {
             VirtualInputManager.Instance.MoveRight = true;
         }
@@ -17,7 +17,7 @@ public class KeyboardInput : MonoBehaviour
             VirtualInputManager.Instance.MoveRight = false;
         }
 
-        if (Input.GetKey(KeyCode.A) || Input.GetAxis("Horizontal") < -0.01f)
+        if (Input.GetKey(KeyCode.A) || Input.GetAxis("Horizontal") < -0.1f)
         {
             VirtualInputManager.Instance.MoveLeft = true;
         }

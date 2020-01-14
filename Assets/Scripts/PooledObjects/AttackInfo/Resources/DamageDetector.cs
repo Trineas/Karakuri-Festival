@@ -106,6 +106,11 @@ public class DamageDetector : MonoBehaviour
 
     public void TakeDamage(AttackInfo info)
     {
+        if (DamageTaken <= 3)
+        {
+            control.SkinnedMeshAnimator.SetBool("Hit", true);
+        }
+
         if (DamageTaken >= 2)
         {
             control.SkinnedMeshAnimator.runtimeAnimatorController = DeathAnimationManager.Instance.GetAnimator(PickDeathAnimation, info);
@@ -123,7 +128,19 @@ public class DamageDetector : MonoBehaviour
             CameraManager.Instance.ShakeCamera(0.25f);
         }
 
-        DamageTaken++;
+        CharacterSwitch cw = this.gameObject.transform.root.GetComponent<CharacterSwitch>();
+        
+        if (cw.characterSwitch == 2)
+        {
+            DamageTaken++;
+            DamageTaken++;
+        }
+
+        else
+        {
+            DamageTaken++;
+        }
+
         return;
     }
 }

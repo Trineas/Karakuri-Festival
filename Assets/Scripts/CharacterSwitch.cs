@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class CharacterSwitch : MonoBehaviour
 {
-    GameObject character1, character2, character3;
+    public GameObject character1, character2, character3;
     public int characterSwitch;
     public bool character3Enabled;
 
     void Start()
     {
         characterSwitch = 1;
-        character1 = GameObject.Find("Goemon");
-        character2 = GameObject.Find("Ebisumaru");
-        character3 = GameObject.Find("Yae");
     }
 
     void Update()
