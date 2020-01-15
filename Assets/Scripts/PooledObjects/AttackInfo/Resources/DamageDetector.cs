@@ -106,17 +106,18 @@ public class DamageDetector : MonoBehaviour
 
     public void TakeDamage(AttackInfo info)
     {
+        control = GetComponent<CharacterControl>();
+
         if (DamageTaken <= 3)
         {
-            control.SkinnedMeshAnimator.SetBool("Hit", true);
+            control.SkinnedMeshAnimator.SetBool(TransitionParameter.Hit.ToString(), true);
         }
 
         if (DamageTaken >= 2)
         {
-            control.SkinnedMeshAnimator.runtimeAnimatorController = DeathAnimationManager.Instance.GetAnimator(PickDeathAnimation, info);
+            control.SkinnedMeshAnimator.SetBool(TransitionParameter.Death.ToString(), true);
             info.CurrentHits++;
 
-            //control.SkinnedMeshAnimator.SetBool(TransitionParameter.Death.ToString(), true);
             control.GetComponent<CapsuleCollider>().enabled = false;
             control.GetComponent<BoxCollider>().enabled = false;
             control.RIGID_BODY.useGravity = false;
@@ -132,7 +133,7 @@ public class DamageDetector : MonoBehaviour
         
         if (cw.characterSwitch == 2)
         {
-            DamageTaken++;
+            //DamageTaken++;
             DamageTaken++;
         }
 

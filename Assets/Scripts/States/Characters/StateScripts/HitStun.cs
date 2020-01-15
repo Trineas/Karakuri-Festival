@@ -32,7 +32,7 @@ public class HitStun : StateData
 
     public override void OnExit(CharacterState characterState, Animator animator, AnimatorStateInfo stateInfo)
     {
-        animator.SetBool("Hit", false);
+        animator.SetBool(TransitionParameter.Hit.ToString(), false);
     }
 }
 

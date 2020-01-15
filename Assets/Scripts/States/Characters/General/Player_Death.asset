@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 359754310a7a23744b7c6747f4466c33, type: 3}
-  m_Name: Ebisumaru_Death
+  m_Script: {fileID: 11500000, guid: 2689dc2df6b35c4498c8333388f3fc0a, type: 3}
+  m_Name: Player_Death
   m_EditorClassIdentifier: 
-  DeathAnimations: 01000000
-  Animator: {fileID: 9100000, guid: 7f3757a9fa2a192479730576a853a7e6, type: 2}

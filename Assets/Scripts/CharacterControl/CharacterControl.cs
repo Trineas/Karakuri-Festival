@@ -13,6 +13,8 @@ public enum TransitionParameter
     Attack,
     RangedAttack,
     TransitionIndex,
+    Hit,
+    Death,
 }
 
 public class CharacterControl : MonoBehaviour
