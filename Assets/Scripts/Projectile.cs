@@ -38,16 +38,23 @@ public class Projectile : MonoBehaviour
         {
             DamageDetector damage = other.gameObject.transform.root.GetComponent<DamageDetector>();
             AttackInfo attack = new AttackInfo();
-            damage.TakeDamage(attack);
+            
 
             if (CharacterSwitch.characterSwitch == 1)
             {
+                damage.TakeDamage(attack);
                 damage.TakeDamage(attack);
             }
 
             if (CharacterSwitch.characterSwitch == 2)
             {
                 damage.TakeDamage(attack);
+                damage.TakeDamage(attack);
+                damage.TakeDamage(attack);
+            }
+
+            if (CharacterSwitch.characterSwitch == 3)
+            {
                 damage.TakeDamage(attack);
             }
 
@@ -58,6 +65,7 @@ public class Projectile : MonoBehaviour
         {
             DamageDetector damage = other.gameObject.transform.root.GetComponent<DamageDetector>();
             AttackInfo attack = new AttackInfo();
+
             damage.TakeDamage(attack);
 
             poolObj.TurnOff();
