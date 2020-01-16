@@ -40,17 +40,28 @@ public class Projectile : MonoBehaviour
             AttackInfo attack = new AttackInfo();
             damage.TakeDamage(attack);
 
+            if (CharacterSwitch.characterSwitch == 1)
+            {
+                damage.TakeDamage(attack);
+            }
+
+            if (CharacterSwitch.characterSwitch == 2)
+            {
+                damage.TakeDamage(attack);
+                damage.TakeDamage(attack);
+            }
+
             poolObj.TurnOff();
         }
 
-            if (other.tag == "Player")
-            {
-                DamageDetector damage = other.gameObject.transform.root.GetComponent<DamageDetector>();
-                AttackInfo attack = new AttackInfo();
-                damage.TakeDamage(attack);
-        
-                poolObj.TurnOff();
-            }
+        if (other.tag == "Player")
+        {
+            DamageDetector damage = other.gameObject.transform.root.GetComponent<DamageDetector>();
+            AttackInfo attack = new AttackInfo();
+            damage.TakeDamage(attack);
+
+            poolObj.TurnOff();
+        }
 
         if (other.tag == "Geometry")
         {

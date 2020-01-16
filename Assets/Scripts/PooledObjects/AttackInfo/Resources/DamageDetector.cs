@@ -93,7 +93,6 @@ public class DamageDetector : MonoBehaviour
                     {
                         if (collider.transform.root.gameObject == info.Attacker.gameObject)
                         {
-                            PickDeathAnimation = trigger.deathAnimation;
                             return true;
                         }
                     }
@@ -110,12 +109,17 @@ public class DamageDetector : MonoBehaviour
 
         if (DamageTaken <= 3)
         {
-            control.SkinnedMeshAnimator.SetBool(TransitionParameter.Hit.ToString(), true);
+            control.SkinnedMeshAnimator1.SetBool(TransitionParameter.Hit.ToString(), true);
+            control.SkinnedMeshAnimator2.SetBool(TransitionParameter.Hit.ToString(), true);
+            control.SkinnedMeshAnimator3.SetBool(TransitionParameter.Hit.ToString(), true);
         }
 
         if (DamageTaken >= 2)
         {
-            control.SkinnedMeshAnimator.SetBool(TransitionParameter.Death.ToString(), true);
+            control.SkinnedMeshAnimator1.SetBool(TransitionParameter.Death.ToString(), true);
+            control.SkinnedMeshAnimator2.SetBool(TransitionParameter.Death.ToString(), true);
+            control.SkinnedMeshAnimator3.SetBool(TransitionParameter.Death.ToString(), true);
+
             info.CurrentHits++;
 
             control.GetComponent<CapsuleCollider>().enabled = false;
@@ -129,12 +133,25 @@ public class DamageDetector : MonoBehaviour
             CameraManager.Instance.ShakeCamera(0.25f);
         }
 
-        CharacterSwitch cw = this.gameObject.transform.root.GetComponent<CharacterSwitch>();
-        
-        if (cw.characterSwitch == 2)
+        if (info.Attacker == control)
         {
-            //DamageTaken++;
-            DamageTaken++;
+            if (CharacterSwitch.characterSwitch == 1)
+            {
+                DamageTaken++;
+                DamageTaken++;
+            }
+
+            if (CharacterSwitch.characterSwitch == 2)
+            {
+                DamageTaken++;
+                DamageTaken++;
+                DamageTaken++;
+            }
+
+            if (CharacterSwitch.characterSwitch == 3)
+            {
+                DamageTaken++;
+            }
         }
 
         else

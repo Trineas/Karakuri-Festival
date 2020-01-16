@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 858432359744853402}
   - component: {fileID: 3676447901550654512}
   m_Layer: 0
-  m_Name: Frog
+  m_Name: Lantern
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -275,7 +275,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9710464550aa64f4caf62b980c21ba9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkinnedMeshAnimator: {fileID: 0}
+  SkinnedMeshAnimator1: {fileID: 2010709147190183758}
+  SkinnedMeshAnimator2: {fileID: 2010709147190183758}
+  SkinnedMeshAnimator3: {fileID: 2010709147190183758}
   MoveRight: 0
   MoveLeft: 0
   MoveUp: 0
@@ -331,7 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a2a135e7c0dfdf4ca1af253558f9560, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageTaken: 2
+  DamageTaken: 0
 --- !u!114 &-4247679222464983072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -534,7 +536,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 031cdcd0ce5d15747857e1500a4f4076, type: 2}
+      objectReference: {fileID: 2100000, guid: 1323c4ec9d934dc459c975bb12a302e1, type: 2}
     - target: {fileID: 3601966337983155029, guid: 63cf06ba407625e4989f99ec57630812,
         type: 3}
       propertyPath: m_IsTrigger
@@ -629,7 +631,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 33bca9c772e563a45b095061f53c31e0, type: 2}
+      objectReference: {fileID: 9100000, guid: 400ab13fd7f035946afc6acfb4acf9d7, type: 2}
     - target: {fileID: 7713603875543989196, guid: 63cf06ba407625e4989f99ec57630812,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -675,6 +677,12 @@ PrefabInstance:
 --- !u!4 &8461554039680854580 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 307591230068505560, guid: 63cf06ba407625e4989f99ec57630812,
+    type: 3}
+  m_PrefabInstance: {fileID: 8154244353308545516}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2010709147190183758 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7696312399461521058, guid: 63cf06ba407625e4989f99ec57630812,
     type: 3}
   m_PrefabInstance: {fileID: 8154244353308545516}
   m_PrefabAsset: {fileID: 0}

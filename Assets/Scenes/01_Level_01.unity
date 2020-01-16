@@ -698,6 +698,16 @@ PrefabInstance:
       propertyPath: SkinnedMeshAnimator
       value: 
       objectReference: {fileID: 178200616}
+    - target: {fileID: 7077721727734176295, guid: 19c7028eb2aa8fb44a9870dbe16e3d10,
+        type: 3}
+      propertyPath: SkinnedMeshAnimator4
+      value: 
+      objectReference: {fileID: 178200616}
+    - target: {fileID: 7077721727734176295, guid: 19c7028eb2aa8fb44a9870dbe16e3d10,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7201758720987818496, guid: 19c7028eb2aa8fb44a9870dbe16e3d10,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -15628,6 +15638,12 @@ PrefabInstance:
       propertyPath: switchEnabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7820304318969907720, guid: a785d346de3594049b58b39882578366,
+        type: 3}
+      propertyPath: SkinnedMeshAnimator4
+      value: 
+      objectReference: {fileID: 7696312399461521058, guid: 63cf06ba407625e4989f99ec57630812,
+        type: 3}
     - target: {fileID: 8119000420437552850, guid: a785d346de3594049b58b39882578366,
         type: 3}
       propertyPath: m_IsTrigger

@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterSwitch : MonoBehaviour
 {
     public GameObject character1, character2, character3;
-    public int characterSwitch;
+    public static int characterSwitch;
     public bool character3Enabled;
 
     void Start()

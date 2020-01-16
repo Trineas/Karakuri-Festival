@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Waypoints : MonoBehaviour
 {
+    public CharacterControl control;
+
     public GameObject[] waypoints;
     int current = 0;
     public float speed;
@@ -11,6 +13,8 @@ public class Waypoints : MonoBehaviour
 
     void Update()
     {
+        control = GetComponent<CharacterControl>();
+
         if (Vector3.Distance(waypoints[current].transform.position, transform.position) < WPRadius)
         {
             current++;
@@ -23,5 +27,10 @@ public class Waypoints : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, waypoints[current].transform.position, Time.deltaTime * speed);
         transform.rotation = waypoints[current].transform.rotation;
+
+        if (control.SkinnedMeshAnimator1.GetBool("Death") == true)
+        {
+            speed = 0;
+        }
     }
 }

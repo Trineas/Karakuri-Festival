@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum TransitionParameter
+public enum TransitionParameter2
 {
     Move,
     Jump,
@@ -17,9 +17,9 @@ public enum TransitionParameter
     Death,
 }
 
-public class CharacterControl : MonoBehaviour
+public class NonPlayerCharacterControl : MonoBehaviour
 {
-    public Animator SkinnedMeshAnimator1, SkinnedMeshAnimator2, SkinnedMeshAnimator3;
+    public Animator SkinnedMeshAnimator1;
     public bool MoveRight;
     public bool MoveLeft;
     public bool MoveUp;
@@ -56,7 +56,7 @@ public class CharacterControl : MonoBehaviour
             return rigid;
         }
     }
-    
+
     private void Awake()
     {
         bool SwitchBack = false;
@@ -85,7 +85,7 @@ public class CharacterControl : MonoBehaviour
         {
             TriggerDetector[] arr = this.gameObject.GetComponentsInChildren<TriggerDetector>();
 
-            foreach(TriggerDetector d in arr)
+            foreach (TriggerDetector d in arr)
             {
                 TriggerDetectors.Add(d);
             }
@@ -100,10 +100,10 @@ public class CharacterControl : MonoBehaviour
 
         Collider[] colliders = this.gameObject.GetComponentsInChildren<Collider>();
 
-        foreach(Collider c in colliders)
+        foreach (Collider c in colliders)
         {
             if (c.gameObject != this.gameObject)
-            {     
+            {
                 c.isTrigger = true;
                 RagdollParts.Add(c);
 
@@ -123,10 +123,6 @@ public class CharacterControl : MonoBehaviour
         this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
         SkinnedMeshAnimator1.enabled = false;
         SkinnedMeshAnimator1.avatar = null;
-        SkinnedMeshAnimator2.enabled = false;
-        SkinnedMeshAnimator2.avatar = null;
-        SkinnedMeshAnimator3.enabled = false;
-        SkinnedMeshAnimator3.avatar = null;
 
         foreach (Collider c in RagdollParts)
         {
@@ -252,4 +248,4 @@ public class CharacterControl : MonoBehaviour
         return null;
     }
 }
- 
+

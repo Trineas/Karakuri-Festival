@@ -47,21 +47,21 @@ public class HUD : MonoBehaviour
             lives.text = "Lives: 0";
         }
 
-        if (cw.characterSwitch == 1)
+        if (CharacterSwitch.characterSwitch == 1)
         {
             char1.gameObject.SetActive(true);
             char2.gameObject.SetActive(false);
             char3.gameObject.SetActive(false);
         }
 
-        if (cw.characterSwitch == 2)
+        if (CharacterSwitch.characterSwitch == 2)
         {
             char1.gameObject.SetActive(false);
             char2.gameObject.SetActive(true);
             char3.gameObject.SetActive(false);
         }
 
-        if (cw.characterSwitch == 3)
+        if (CharacterSwitch.characterSwitch == 3)
         {
             char1.gameObject.SetActive(false);
             char2.gameObject.SetActive(false);
